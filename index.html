@@ -74,7 +74,7 @@
     --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
 
     --nav-h: 72px;
-    --section-pad: 100px;
+    --section-pad: 112px;
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -113,7 +113,8 @@
   .wrap {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 0 28px;
+    padding-left: 28px;
+    padding-right: 28px;
   }
 
   /* ---------- 0. INTRO OVERLAY (SOKKA04 -> PORTEFOLIO -> YOHANN) ---------- */
@@ -490,7 +491,7 @@
   }
 
   /* ---------- SECTIONS COMMUNES (STYLE PWSH) ---------- */
-  section {
+  section, section.wrap {
     padding-top: var(--section-pad);
     padding-bottom: var(--section-pad);
     border-bottom: 1px solid var(--line);
@@ -499,14 +500,14 @@
     font-family: var(--font-mono);
     font-size: 12.5px;
     color: var(--accent-bright);
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 6px;
     background: var(--accent-dim);
     border: 1px solid var(--accent-border);
-    padding: 4px 12px;
+    padding: 5px 14px;
     border-radius: 6px;
   }
   .eyebrow::before {
@@ -520,7 +521,7 @@
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.025em;
-    margin-bottom: 44px;
+    margin-bottom: 48px;
   }
 
   /* ---------- 2. INTRO / À PROPOS (curus.md) ---------- */
@@ -985,10 +986,11 @@
   @media (max-width: 860px) {
     :root {
       --nav-h: 64px;
-      --section-pad: 68px;
+      --section-pad: 76px;
     }
     .wrap {
-      padding: 0 20px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
     nav {
       padding: 0 20px;
