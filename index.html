@@ -1558,7 +1558,7 @@
   const canvas = document.getElementById('mosaic-canvas');
   const ctx = canvas.getContext('2d');
   let particles = [];
-  let mouse = { x: -1000, y: -1000, radius: 110, active: false };
+  let mouse = { x: -1000, y: -1000, radius: 55, active: false }; // Rayon réduit pour une interaction fine
   let scrollY = 0;
   let isCanvasVisible = true;
   let isFallbackMode = false;
@@ -1575,7 +1575,8 @@
 
     const aspect = portraitImg.naturalHeight / portraitImg.naturalWidth;
     const isMobile = window.innerWidth < 768;
-    const sampleWidth = isMobile ? 85 : 130;
+    // Densité de pixels considérablement augmentée pour un rendu haute définition net
+    const sampleWidth = isMobile ? 120 : 210;
     const sampleHeight = Math.floor(sampleWidth * aspect);
 
     // Dimensions d'affichage du buste au centre du hero
@@ -1596,7 +1597,6 @@
     try {
       imgData = offCtx.getImageData(0, 0, sampleWidth, sampleHeight).data;
     } catch (err) {
-      // Si exécuté en file:/// local, le navigateur bloque getImageData par sécurité CORS
       isFallbackMode = true;
     }
 
@@ -1608,7 +1608,8 @@
     particles = [];
     const stepX = bustWidth / sampleWidth;
     const stepY = bustHeight / sampleHeight;
-    const tileSize = Math.max(2.4, stepX * 0.92);
+    // Taille fine des carreaux pour un niveau de détail élevé
+    const tileSize = Math.max(1.7, stepX * 0.94);
 
     for (let y = 0; y < sampleHeight; y++) {
       for (let x = 0; x < sampleWidth; x++) {
@@ -1626,8 +1627,8 @@
           particles.push({
             ox: origX,
             oy: origY,
-            x: origX + (Math.random() - 0.5) * 35,
-            y: origY + (Math.random() - 0.5) * 35,
+            x: origX + (Math.random() - 0.5) * 8, // Dispersion initiale très faible pour un visage immédiatement net
+            y: origY + (Math.random() - 0.5) * 8,
             vx: 0,
             vy: 0,
             r: r,
@@ -1675,8 +1676,8 @@
 
     // Mode repli (pour double-clic file:// local sans serveur web)
     if (isFallbackMode) {
-      const offsetX = mouse.active ? (mouse.x - canvas.width / 2) * 0.03 : 0;
-      const offsetY = mouse.active ? (mouse.y - canvas.height / 2) * 0.03 : 0;
+      const offsetX = mouse.active ? (mouse.x - canvas.width / 2) * 0.012 : 0;
+      const offsetY = mouse.active ? (mouse.y - canvas.height / 2) * 0.012 : 0;
       const scrollOffset = scrollY * 0.35;
 
       ctx.save();
@@ -1689,7 +1690,6 @@
         bustDims.h
       );
 
-      // Trame de mosaïque cyber par-dessus
       ctx.strokeStyle = 'rgba(0, 229, 255, 0.04)';
       ctx.lineWidth = 1;
       const gridStep = 8;
@@ -1722,6 +1722,7 @@
         targetY += Math.sin(angle) * (scatterFactor * 140);
       }
 
+      // Élargissement modéré et subtil à l'approche de la souris
       if (mouse.active) {
         const dx = p.x - mouse.x;
         const dy = p.y - mouse.y;
@@ -1729,18 +1730,19 @@
 
         if (distSq < repelRadiusSq) {
           const dist = Math.sqrt(distSq);
-          const force = (1 - dist / repelRadius) * 16;
+          const force = (1 - dist / repelRadius) * 3.6; // Force douce et maîtrisée
           const angle = Math.atan2(dy, dx);
           p.vx += Math.cos(angle) * force;
           p.vy += Math.sin(angle) * force;
         }
       }
 
-      p.vx += (targetX - p.x) * 0.08;
-      p.vy += (targetY - p.y) * 0.08;
+      // Rappel élastique plus réactif
+      p.vx += (targetX - p.x) * 0.12;
+      p.vy += (targetY - p.y) * 0.12;
 
-      p.vx *= 0.82;
-      p.vy *= 0.82;
+      p.vx *= 0.76;
+      p.vy *= 0.76;
 
       p.x += p.vx;
       p.y += p.vy;
@@ -1748,6 +1750,9 @@
       ctx.fillStyle = `rgb(${p.r}, ${p.g}, ${p.b})`;
       ctx.fillRect(p.x, p.y, p.size, p.size);
     }
+
+    requestAnimationFrame(animateMosaic);
+  }
 
     requestAnimationFrame(animateMosaic);
   }
