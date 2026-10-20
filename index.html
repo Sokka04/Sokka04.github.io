@@ -1575,8 +1575,8 @@
 
     const aspect = portraitImg.naturalHeight / portraitImg.naturalWidth;
     const isMobile = window.innerWidth < 768;
-    // Densité de pixels considérablement augmentée pour un rendu haute définition net
-    const sampleWidth = isMobile ? 120 : 210;
+    // Haute densité : 360 colonnes sur desktop, 200 sur mobile (plus de 70 000 micro-carreaux ultra-détaillés)
+    const sampleWidth = isMobile ? 200 : 360;
     const sampleHeight = Math.floor(sampleWidth * aspect);
 
     // Dimensions d'affichage du buste au centre du hero
@@ -1608,15 +1608,15 @@
     particles = [];
     const stepX = bustWidth / sampleWidth;
     const stepY = bustHeight / sampleHeight;
-    // Taille fine des carreaux pour un niveau de détail élevé
-    const tileSize = Math.max(1.7, stepX * 0.94);
+    // Taille continue des micro-carreaux pour un portrait parfaitement net sans grille sombre
+    const tileSize = Math.max(1.3, stepX * 1.05);
 
     for (let y = 0; y < sampleHeight; y++) {
       for (let x = 0; x < sampleWidth; x++) {
         const idx = (y * sampleWidth + x) * 4;
         const alpha = imgData[idx + 3];
 
-        if (alpha > 45) { // Uniquement les pixels visibles de la silhouette détourée
+        if (alpha > 40) {
           const r = imgData[idx];
           const g = imgData[idx + 1];
           const b = imgData[idx + 2];
@@ -1627,8 +1627,8 @@
           particles.push({
             ox: origX,
             oy: origY,
-            x: origX + (Math.random() - 0.5) * 8, // Dispersion initiale très faible pour un visage immédiatement net
-            y: origY + (Math.random() - 0.5) * 8,
+            x: origX,
+            y: origY,
             vx: 0,
             vy: 0,
             r: r,
@@ -1676,8 +1676,8 @@
 
     // Mode repli (pour double-clic file:// local sans serveur web)
     if (isFallbackMode) {
-      const offsetX = mouse.active ? (mouse.x - canvas.width / 2) * 0.012 : 0;
-      const offsetY = mouse.active ? (mouse.y - canvas.height / 2) * 0.012 : 0;
+      const offsetX = mouse.active ? (mouse.x - canvas.width / 2) * 0.008 : 0;
+      const offsetY = mouse.active ? (mouse.y - canvas.height / 2) * 0.008 : 0;
       const scrollOffset = scrollY * 0.35;
 
       ctx.save();
@@ -1689,25 +1689,15 @@
         bustDims.w,
         bustDims.h
       );
-
-      ctx.strokeStyle = 'rgba(0, 229, 255, 0.04)';
-      ctx.lineWidth = 1;
-      const gridStep = 8;
-      for (let gx = bustDims.x; gx < bustDims.x + bustDims.w; gx += gridStep) {
-        ctx.beginPath();
-        ctx.moveTo(gx + offsetX, bustDims.y + offsetY - scrollOffset);
-        ctx.lineTo(gx + offsetX, bustDims.y + offsetY + bustDims.h - scrollOffset);
-        ctx.stroke();
-      }
       ctx.restore();
 
       requestAnimationFrame(animateMosaic);
       return;
     }
 
-    // Mode Mosaïque Standard (Sur serveur HTTP / GitHub Pages)
+    // Mode Mosaïque Haute Définition
     const scatterFactor = Math.min(1.8, scrollY / 300);
-    const repelRadius = mouse.radius;
+    const repelRadius = 45; // Rayon très localisé
     const repelRadiusSq = repelRadius * repelRadius;
 
     for (let i = 0; i < particles.length; i++) {
@@ -1722,27 +1712,29 @@
         targetY += Math.sin(angle) * (scatterFactor * 140);
       }
 
-      // Élargissement modéré et subtil à l'approche de la souris
+      // Ondulation subtile au curseur SANS trou béant (onde sinusoïdale douce)
       if (mouse.active) {
         const dx = p.x - mouse.x;
         const dy = p.y - mouse.y;
         const distSq = dx * dx + dy * dy;
 
-        if (distSq < repelRadiusSq) {
+        if (distSq < repelRadiusSq && distSq > 0) {
           const dist = Math.sqrt(distSq);
-          const force = (1 - dist / repelRadius) * 3.6; // Force douce et maîtrisée
+          // Onde : nulle au centre exact, max à mi-distance, nulle au bord
+          const wave = Math.sin((dist / repelRadius) * Math.PI);
+          const shift = wave * 2.2; // 2 pixels max de déformation douce
           const angle = Math.atan2(dy, dx);
-          p.vx += Math.cos(angle) * force;
-          p.vy += Math.sin(angle) * force;
+          p.vx += Math.cos(angle) * shift;
+          p.vy += Math.sin(angle) * shift;
         }
       }
 
-      // Rappel élastique plus réactif
-      p.vx += (targetX - p.x) * 0.12;
-      p.vy += (targetY - p.y) * 0.12;
+      // Rappel élastique rapide
+      p.vx += (targetX - p.x) * 0.16;
+      p.vy += (targetY - p.y) * 0.16;
 
-      p.vx *= 0.76;
-      p.vy *= 0.76;
+      p.vx *= 0.72;
+      p.vy *= 0.72;
 
       p.x += p.vx;
       p.y += p.vy;
@@ -1750,9 +1742,6 @@
       ctx.fillStyle = `rgb(${p.r}, ${p.g}, ${p.b})`;
       ctx.fillRect(p.x, p.y, p.size, p.size);
     }
-
-    requestAnimationFrame(animateMosaic);
-  }
 
     requestAnimationFrame(animateMosaic);
   }
