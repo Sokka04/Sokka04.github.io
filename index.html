@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yohann Saramba · Sokka04 | Ingénieur Réseaux & Sécurité · Développeur Web</title>
-<meta name="description" content="Portfolio de Yohann Saramba (Sokka04). Architectures réseaux sécurisées, cryptographie appliquée et développement web moderne. Disponible dès le 01/11/2026.">
+<title>Yohann Saramba (Sokka04) | Ingénieur Réseaux & Sécurité · Développeur Web</title>
+<meta name="description" content="Portfolio professionnel de Yohann Saramba (alias Sokka04). Ingénieur Réseaux & Sécurité et Développeur Web Fullstack à ESIG Global Success. Disponible dès le 01/11/2026.">
 
-<!-- Open Graph & Meta -->
-<meta property="og:title" content="Yohann Saramba (Sokka04) | Portfolio">
-<meta property="og:description" content="Ingénieur Réseaux & Sécurité · Développeur Web. Découvrez mes réalisations et mon profil technique.">
+<!-- Open Graph / Partage -->
+<meta property="og:title" content="Yohann Saramba (Sokka04) | Ingénieur Réseaux & Sécurité · Développeur Web">
+<meta property="og:description" content="Infrastructures réseau sécurisées (VLANs, OSPF, CCNA), cryptographie appliquée et développement d'applications web.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sokka04.github.io/">
-<meta property="og:image" content="portrait.png">
+<meta property="og:image" content="https://sokka04.github.io/portrait.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#07090C">
+<meta name="theme-color" content="#FAF9F6">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='85'>⚡</text></svg>">
 
-<!-- Fonts d'auteur : Clash Display (Fontshare) + Plus Jakarta Sans + JetBrains Mono -->
+<!-- Typographie d'auteur : Clash Display + Space Grotesk + IBM Plex Mono / JetBrains Mono + Plus Jakarta Sans -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
+<!-- Données structurées JSON-LD Schema.org -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Yohann Saramba",
   "alternateName": "Sokka04",
-  "jobTitle": "Ingénieur Réseaux & Sécurité · Développeur Web Fullstack",
+  "jobTitle": "Ingénieur Réseaux & Sécurité · Développeur Web",
   "image": "https://sokka04.github.io/portrait.png",
   "url": "https://sokka04.github.io/",
   "email": "mailto:Saramba.yoh4nn@outlook.com",
@@ -41,52 +42,68 @@
 </script>
 
 <style>
-  /* ---------- DESIGN SYSTEM (CODE & CHILL INSPIRATION) ---------- */
+  /* ---------- PALETTE MODE CLAIR UNIQUE (BLANC ALBÂTRE & VIOLET PWSH) ---------- */
   :root {
-    --bg: #07090C;
-    --bg-card: #0E1218;
-    --bg-card-hover: #131822;
-    --line: #1C2331;
-    --line-subtle: #141924;
-    --ink: #F0F4F8;
-    --ink-dim: #94A3B8;
-    --muted: #64748B;
-    --accent: #22D3EE;
-    --accent-glow: rgba(34, 211, 238, 0.25);
-    --accent-dim: rgba(34, 211, 238, 0.08);
-    --emerald: #10B981;
-    --silver-grad: linear-gradient(180deg, #FFFFFF 0%, #B8C2CC 60%, #475569 100%);
-    --font-heading: 'Clash Display', sans-serif;
-    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-    --nav-h: 76px;
-  }
-
-  [data-theme="light"] {
     --bg: #FAF9F6;
-    --bg-card: #FFFFFF;
-    --bg-card-hover: #F8FAFC;
-    --line: #E2E8F0;
-    --line-subtle: #EDF2F7;
-    --ink: #0F172A;
-    --ink-dim: #475569;
-    --muted: #64748B;
-    --accent: #0284C7;
-    --accent-glow: rgba(2, 132, 199, 0.2);
-    --silver-grad: linear-gradient(180deg, #1E293B 0%, #475569 70%, #94A3B8 100%);
+    --bg-alt: #F3F1EC;
+    --card: #FFFFFF;
+    --card-hover: #FCFBF9;
+    --ink: #14151A;
+    --ink-dim: #2D303E;
+    --muted: #5E6170;
+    --line: #E4E2DC;
+    --line-subtle: #ECEAE4;
+
+    /* Accent Violet & Cobalt d'origine */
+    --accent: #5B21B6;
+    --accent-bright: #6E44FF;
+    --accent-cobalt: #3454D1;
+    --accent-glow: rgba(110, 68, 255, 0.16);
+    --accent-dim: rgba(110, 68, 255, 0.07);
+    --accent-border: rgba(110, 68, 255, 0.28);
+    --accent-gradient: linear-gradient(135deg, #3454D1 0%, #6E44FF 100%);
+    --hero-word-grad: linear-gradient(180deg, #14151A 0%, #3B1D82 55%, #6E44FF 100%);
+
+    --emerald: #059669;
+    --emerald-bg: rgba(5, 150, 105, 0.08);
+    --emerald-border: rgba(5, 150, 105, 0.28);
+
+    --font-display: 'Clash Display', 'Space Grotesk', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+
+    --nav-h: 72px;
+    --section-pad: 100px;
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; background: var(--bg); }
+
   body {
     background-color: var(--bg);
+    background-image:
+      radial-gradient(circle at 85% 12%, rgba(110, 68, 255, 0.07) 0%, transparent 45%),
+      radial-gradient(circle at 12% 88%, rgba(52, 84, 209, 0.05) 0%, transparent 45%);
     color: var(--ink);
     font-family: var(--font-sans);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    position: relative;
+  }
+
+  /* Trame subtile de terminal clair en arrière-plan */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image:
+      linear-gradient(to right, rgba(20, 21, 26, 0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(20, 21, 26, 0.028) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: -1;
   }
 
   a { color: inherit; text-decoration: none; }
@@ -94,22 +111,25 @@
   .mono { font-family: var(--font-mono); }
 
   .wrap {
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 28px;
   }
 
-  /* ---------- 0. INTRO SCRAMBLE OVERLAY ---------- */
+  /* ---------- 0. INTRO OVERLAY (SOKKA04 -> PORTEFOLIO -> YOHANN) ---------- */
   #intro-overlay {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
-    background: #050709;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 50% 50%, rgba(110, 68, 255, 0.10) 0%, transparent 60%);
     z-index: 9999;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+    padding: 24px;
+    transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.85s;
     user-select: none;
     cursor: pointer;
   }
@@ -118,27 +138,63 @@
     visibility: hidden;
     pointer-events: none;
   }
+  .intro-pwsh-bar {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent-bright);
+    background: rgba(110, 68, 255, 0.07);
+    border: 1px solid var(--accent-border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
   .intro-word {
-    font-family: var(--font-heading);
-    font-size: clamp(52px, 11vw, 130px);
+    font-family: var(--font-display);
+    font-size: clamp(46px, 11vw, 138px);
     font-weight: 700;
     letter-spacing: -0.03em;
-    background: var(--silver-grad);
+    background: var(--hero-word-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
     text-align: center;
+    line-height: 1;
+    padding: 8px 0;
+  }
+  .intro-steps-dots {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .step-pill {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    transition: all 0.3s ease;
+  }
+  .step-pill.active {
+    border-color: var(--accent-bright);
+    color: var(--accent-bright);
+    background: var(--accent-dim);
+    font-weight: 600;
   }
   .intro-sub {
-    margin-top: 18px;
+    margin-top: 20px;
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 11.5px;
     color: var(--muted);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
-  /* ---------- HEADER / NAVBAR ---------- */
+  /* ---------- HEADER STICKY (STYLE POWERSHELL) ---------- */
   header {
     position: fixed;
     top: 0; left: 0; width: 100%;
@@ -146,190 +202,223 @@
     z-index: 500;
     display: flex;
     align-items: center;
-    background: rgba(7, 9, 12, 0.75);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--line-subtle);
-    transition: background 0.3s ease;
+    background: rgba(250, 249, 246, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
   }
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1240px;
+    max-width: 1160px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 28px;
   }
-  .brand {
-    font-family: var(--font-heading);
-    font-size: 19px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+  .logo {
+    font-family: var(--font-mono);
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
   }
-  .brand-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
+  .logo .ps-tag {
+    color: var(--accent-bright);
+    font-weight: 700;
   }
-  .nav-center {
+  .cursor-blink {
+    display: inline-block;
+    width: 8px; height: 15px;
+    background: var(--accent-bright);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .nav-links {
     display: flex;
     gap: 28px;
     font-family: var(--font-mono);
-    font-size: 12.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    font-size: 13px;
     color: var(--muted);
   }
-  .nav-center a {
-    transition: color 0.2s ease;
+  .nav-links a {
     position: relative;
-    padding: 6px 0;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
   }
-  .nav-center a:hover { color: var(--ink); }
-  .nav-right-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  .nav-links a:hover { color: var(--accent-bright); }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
   }
-  .theme-toggle-btn {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-size: 15px;
-    transition: all 0.2s;
-  }
-  .theme-toggle-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
 
-  .btn-pill-contact {
+  .btn-nav-pwsh {
     font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink);
-    padding: 8px 18px;
-    border-radius: 30px;
-    border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.03);
-    transition: all 0.25s ease;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: var(--accent-gradient);
+    padding: 9px 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px var(--accent-glow);
+    transition: all 0.2s ease;
   }
-  .btn-pill-contact:hover {
-    border-color: var(--accent);
-    background: var(--accent-dim);
-    color: var(--accent);
+  .btn-nav-pwsh:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(110, 68, 255, 0.28);
   }
 
-  /* ---------- 1. HERO SECTION (MOSAIC CANVAS) ---------- */
+  .menu-btn {
+    display: none;
+    color: var(--ink);
+    padding: 6px;
+  }
+
+  /* ---------- 1. HERO SECTION (PORTRAIT MICRO-PIXELS + YOHANN) ---------- */
   .hero-canvas-section {
     position: relative;
     width: 100%;
     min-height: 100vh;
+    padding-top: calc(var(--nav-h) + 18px);
+    padding-bottom: 38px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 42px;
     overflow: hidden;
+    border-bottom: 1px solid var(--line);
   }
 
-  /* Vignette sombre en bas du Hero pour garantir une lisibilité parfaite sur la chemise blanche */
-  .hero-canvas-section::after {
-    content: '';
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 52%;
-    background: linear-gradient(
-      to top,
-      rgba(7, 9, 12, 0.98) 0%,
-      rgba(7, 9, 12, 0.85) 28%,
-      rgba(7, 9, 12, 0.35) 60%,
-      transparent 100%
-    );
-    z-index: 5;
-    pointer-events: none;
+  /* Barre de statut PowerShell en haut du Hero */
+  .hero-pwsh-top {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    max-width: 1120px;
+    padding: 0 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
   }
-  [data-theme="light"] .hero-canvas-section::after {
-    background: linear-gradient(
-      to top,
-      rgba(250, 249, 246, 0.98) 0%,
-      rgba(250, 249, 246, 0.85) 28%,
-      rgba(250, 249, 246, 0.35) 60%,
-      transparent 100%
-    );
+  .pwsh-prompt-pill {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  }
+  .pwsh-prompt-pill .ps-dir { color: var(--accent-cobalt); font-weight: 600; }
+  .pwsh-prompt-pill .ps-cmd { color: var(--accent-bright); font-weight: 600; }
+
+  .pwsh-render-status {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-bright);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--accent-border);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 500;
   }
 
-  /* Le canvas en fond */
+  /* Canvas 2D des 110 000 micro-pixels */
   #mosaic-canvas {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    z-index: 1;
+    z-index: 2;
     pointer-events: auto;
+  }
+
+  /* Vignette blanche dépolie en bas du Hero pour une lisibilité totale */
+  .hero-canvas-section::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 46%;
+    background: linear-gradient(
+      to top,
+      #FAF9F6 0%,
+      rgba(250, 249, 246, 0.94) 34%,
+      rgba(250, 249, 246, 0.45) 68%,
+      transparent 100%
+    );
+    z-index: 6;
+    pointer-events: none;
+  }
+
+  .hero-bottom-stack {
+    position: relative;
+    z-index: 15;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
   }
 
   /* Le mot géant "YOHANN" devant le buste */
   .hero-giant-word-container {
-    position: relative;
-    z-index: 10;
     width: 100%;
     text-align: center;
     pointer-events: none;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
   .hero-giant-word {
-    font-family: var(--font-heading);
-    font-size: clamp(68px, 16.5vw, 225px);
+    font-family: var(--font-display);
+    font-size: clamp(64px, 15.5vw, 210px);
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.035em;
     line-height: 0.88;
     text-transform: uppercase;
-    background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 55%, #64748B 100%);
+    background: var(--hero-word-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.95)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9));
-    transition: transform 0.15s ease-out;
+    filter: drop-shadow(0 8px 24px rgba(250, 249, 246, 0.95)) drop-shadow(0 4px 12px rgba(110, 68, 255, 0.14));
   }
 
-  /* Barre d'accroche en bas du hero (lisibilité renforcée) */
+  /* Barre d'accroche et CTAs en bas du Hero */
   .hero-bottom-bar {
-    position: relative;
-    z-index: 20;
     width: 100%;
-    max-width: 1240px;
-    padding: 0 32px;
+    max-width: 1120px;
+    padding: 0 28px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 20px;
   }
   .hero-title-group h2 {
-    font-size: clamp(21px, 2.6vw, 32px);
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 2.5vw, 30px);
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: 8px;
-    color: #FFFFFF;
-    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95);
-  }
-  [data-theme="light"] .hero-title-group h2 {
-    color: #0F172A;
-    text-shadow: none;
+    color: var(--ink);
+    margin-bottom: 6px;
   }
   .hero-title-group h2 .dim-italic {
     font-family: var(--font-sans);
     font-weight: 400;
     font-style: italic;
-    color: #CBD5E1;
-  }
-  [data-theme="light"] .hero-title-group h2 .dim-italic {
-    color: #334155;
+    color: var(--accent-cobalt);
   }
   .hero-availability-tag {
     display: inline-flex;
@@ -337,103 +426,114 @@
     gap: 8px;
     font-family: var(--font-mono);
     font-size: 12px;
-    font-weight: 500;
-    color: #34D399;
-    background: rgba(7, 9, 12, 0.88);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(16, 185, 129, 0.45);
+    font-weight: 600;
+    color: var(--emerald);
+    background: #FFFFFF;
+    border: 1px solid var(--emerald-border);
     padding: 6px 14px;
     border-radius: 20px;
-    margin-top: 4px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
   }
-  [data-theme="light"] .hero-availability-tag {
-    background: rgba(255, 255, 255, 0.92);
-    color: #059669;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  }
+
   .hero-actions-right {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
+    flex-wrap: wrap;
   }
-  .btn-circle-down {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    background: rgba(7, 9, 12, 0.82);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: var(--ink);
-    transition: all 0.25s ease;
-  }
-  .btn-circle-down:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(3px);
-  }
-  .btn-cta-cv {
+  .btn-pwsh-primary {
     font-family: var(--font-mono);
     font-size: 13px;
     font-weight: 600;
-    padding: 13px 24px;
-    border-radius: 30px;
+    padding: 13px 22px;
+    border-radius: 8px;
     background: var(--ink);
-    color: var(--bg);
+    color: #FFFFFF;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.25s ease;
+    transition: all 0.22s ease;
   }
-  .btn-cta-cv:hover {
-    background: var(--accent);
-    color: #07090C;
+  .btn-pwsh-primary:hover {
+    background: var(--accent-bright);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px var(--accent-glow);
+    box-shadow: 0 10px 22px var(--accent-glow);
+  }
+  .btn-pwsh-cv {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 13px 22px;
+    border-radius: 8px;
+    background: var(--accent-gradient);
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 18px var(--accent-glow);
+    transition: all 0.22s ease;
+  }
+  .btn-pwsh-cv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(110, 68, 255, 0.32);
   }
 
-  /* ---------- 2. INTRO SECTION (WORD-BY-WORD REVEAL) ---------- */
-  .section-intro {
-    padding: 140px 0 100px;
-    border-top: 1px solid var(--line-subtle);
-    position: relative;
+  /* ---------- SECTIONS COMMUNES (STYLE PWSH) ---------- */
+  section {
+    padding-top: var(--section-pad);
+    padding-bottom: var(--section-pad);
+    border-bottom: 1px solid var(--line);
   }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--accent-bright);
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-border);
+    padding: 4px 12px;
+    border-radius: 6px;
+  }
+  .eyebrow::before {
+    content: 'PS Sokka04>';
+    color: var(--accent-cobalt);
+    font-weight: 700;
+  }
+  .section-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    margin-bottom: 44px;
+  }
+
+  /* ---------- 2. INTRO / À PROPOS (curus.md) ---------- */
   .intro-grid {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 60px;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 48px;
     align-items: start;
   }
-  .intro-left-label {
-    font-family: var(--font-heading);
-    font-size: clamp(60px, 9vw, 110px);
-    font-weight: 700;
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    user-select: none;
-  }
-  .intro-right-card {
-    background: var(--bg-card);
+  .intro-bio-card {
+    background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 44px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 10px 30px rgba(20, 21, 26, 0.03);
   }
   .intro-text-reveal {
-    font-size: 20px;
+    font-size: 18.5px;
     line-height: 1.8;
     color: var(--muted);
   }
   .intro-text-reveal .word {
     display: inline-block;
-    transition: color 0.3s ease, opacity 0.3s ease;
+    transition: color 0.25s ease, opacity 0.25s ease;
     opacity: 0.35;
   }
   .intro-text-reveal .word.lit {
@@ -441,33 +541,88 @@
     opacity: 1;
   }
 
-  /* ---------- 3. THE STACK (MARQUEE ROWS) ---------- */
+  .fact-list {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(20, 21, 26, 0.03);
+  }
+  .fact-list-header {
+    background: var(--bg-alt);
+    padding: 12px 20px;
+    font-weight: 600;
+    color: var(--accent-cobalt);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+  }
+  .fact-list div.fact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .fact-list div.fact-row:last-child { border-bottom: none; }
+  .fact-list div.fact-row span:first-child { color: var(--muted); }
+  .fact-list div.fact-row span:last-child { font-weight: 600; color: var(--ink); text-align: right; }
+
+  /* ---------- 3. BILAN S3 & S4 (CONSERVÉ DE TON PORTFOLIO) ---------- */
+  .bilan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .bilan-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .bilan-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-bright);
+    box-shadow: 0 14px 32px -10px var(--accent-glow);
+  }
+  .bilan-card h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--accent-cobalt);
+  }
+  .bilan-card p {
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-size: 15px;
+  }
+  .bilan-card ul { list-style: none; }
+  .bilan-card li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 12px;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .bilan-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-bright);
+    font-family: var(--font-mono);
+    font-weight: 700;
+  }
+  .bilan-card li strong { color: var(--accent-cobalt); font-weight: 600; }
+
+  /* ---------- 4. THE STACK (MARQUEE SUR FOND CLAIR VIOLET) ---------- */
   .section-stack {
-    padding: 90px 0;
-    border-top: 1px solid var(--line-subtle);
-    border-bottom: 1px solid var(--line-subtle);
-    background: rgba(14, 18, 24, 0.4);
+    padding: 80px 0;
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--line);
     overflow: hidden;
   }
-  .stack-header-line {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 36px;
-  }
-  .stack-label {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    color: var(--accent);
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .stack-divider {
-    height: 1px; width: 100%;
-    background: var(--line);
-  }
-
   .marquee-track {
     display: flex;
     overflow: hidden;
@@ -479,8 +634,7 @@
     display: flex;
     gap: 14px;
     white-space: nowrap;
-    animation: marqueeScroll 34s linear infinite;
-    will-change: transform;
+    animation: marqueeScroll 36s linear infinite;
   }
   .marquee-track.reverse .marquee-inner {
     animation-direction: reverse;
@@ -492,151 +646,109 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
-
   .stack-pill {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
     border-radius: 30px;
-    background: var(--bg-card);
+    background: var(--card);
     border: 1px solid var(--line);
     font-family: var(--font-mono);
     font-size: 13px;
-    color: var(--ink-dim);
+    font-weight: 500;
+    color: var(--ink);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
     transition: all 0.2s ease;
   }
   .stack-pill-dot {
-    width: 6px; height: 6px;
+    width: 7px; height: 7px;
     border-radius: 50%;
-    background: var(--muted);
-    transition: background 0.2s;
+    background: var(--accent-bright);
   }
   .stack-pill:hover {
-    border-color: var(--accent);
-    color: var(--ink);
+    border-color: var(--accent-bright);
+    color: var(--accent-bright);
     transform: translateY(-2px);
-    background: var(--bg-card-hover);
-  }
-  .stack-pill:hover .stack-pill-dot {
-    background: var(--accent);
-    box-shadow: 0 0 6px var(--accent);
+    box-shadow: 0 6px 16px var(--accent-glow);
   }
 
-  /* ---------- 4. CE QUE JE FAIS (SERVICES ACCORDION) ---------- */
-  .section-services {
-    padding: 140px 0;
-    border-bottom: 1px solid var(--line-subtle);
-  }
-  .services-top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 60px;
-  }
-  .section-title-big {
-    font-family: var(--font-heading);
-    font-size: clamp(38px, 6vw, 76px);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    background: var(--silver-grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-  }
-
+  /* ---------- 5. CE QUE JE RÉALISE (ACCORDÉON NUMÉROTÉ) ---------- */
   .service-row {
     border-top: 1px solid var(--line);
-    padding: 38px 0;
+    padding: 32px 0;
     display: grid;
-    grid-template-columns: 80px 1.4fr 1fr 60px;
-    gap: 32px;
+    grid-template-columns: 70px 1.3fr 1fr 50px;
+    gap: 28px;
     align-items: center;
-    transition: background 0.25s ease;
-    cursor: pointer;
+    transition: all 0.2s ease;
   }
-  .service-row:last-child {
-    border-bottom: 1px solid var(--line);
-  }
+  .service-row:last-child { border-bottom: 1px solid var(--line); }
   .service-num {
     font-family: var(--font-mono);
-    font-size: 16px;
-    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent-bright);
   }
   .service-name {
     font-family: var(--font-heading);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    letter-spacing: -0.01em;
     color: var(--ink);
     transition: color 0.2s;
   }
   .service-desc {
     font-size: 15px;
     color: var(--muted);
-    line-height: 1.6;
   }
   .service-arrow {
-    font-size: 22px;
-    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 20px;
+    color: var(--accent-cobalt);
     text-align: right;
-    transition: transform 0.25s ease, color 0.25s ease;
+    transition: transform 0.25s ease;
   }
-  .service-row:hover .service-name {
-    color: var(--accent);
-  }
-  .service-row:hover .service-arrow {
-    transform: translate(4px, -4px);
-    color: var(--accent);
-  }
+  .service-row:hover .service-name { color: var(--accent-bright); }
+  .service-row:hover .service-arrow { transform: translate(4px, -4px); }
 
-  /* ---------- 5. SELECTED WORK (CASE STUDIES) ---------- */
-  .section-projects {
-    padding: 140px 0;
-  }
+  /* ---------- 6. PROJETS & ÉTUDES DE CAS ---------- */
   .project-item {
-    margin-bottom: 140px;
+    margin-bottom: 90px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 48px;
     align-items: center;
   }
   .project-item:last-child { margin-bottom: 0; }
-  .project-item.reverse {
-    grid-template-columns: 1fr 1fr;
-  }
   .project-item.reverse .project-info { order: 2; }
   .project-item.reverse .project-visual { order: 1; }
 
   .project-counter {
     font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--accent);
-    letter-spacing: 0.1em;
-    margin-bottom: 14px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent-bright);
+    margin-bottom: 10px;
   }
   .project-info h3 {
     font-family: var(--font-heading);
-    font-size: clamp(26px, 3.5vw, 42px);
+    font-size: clamp(24px, 3vw, 34px);
     font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 18px;
-    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    color: var(--ink);
   }
   .project-info p.summary {
-    font-size: 16.5px;
-    color: var(--ink-dim);
-    line-height: 1.7;
-    margin-bottom: 24px;
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 20px;
   }
 
   .project-specs {
-    background: var(--bg-card);
+    background: var(--card);
     border: 1px solid var(--line);
     border-radius: 12px;
     padding: 18px 22px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .spec-row {
     display: flex;
@@ -645,38 +757,32 @@
   }
   .spec-row:last-child { margin-bottom: 0; }
   .spec-label {
-    width: 110px;
+    width: 105px;
     font-family: var(--font-mono);
-    color: var(--muted);
+    color: var(--accent-cobalt);
     font-size: 12px;
+    font-weight: 600;
     text-transform: uppercase;
   }
-  .spec-value {
-    color: var(--ink);
-    flex: 1;
-  }
+  .spec-value { color: var(--ink); flex: 1; }
 
   .project-tags {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-bottom: 28px;
+    margin-bottom: 22px;
   }
   .project-tag {
     font-family: var(--font-mono);
     font-size: 11.5px;
-    color: var(--muted);
-    background: rgba(255,255,255,0.03);
+    color: var(--ink);
+    background: var(--bg-alt);
     border: 1px solid var(--line);
-    padding: 4px 12px;
+    padding: 5px 12px;
     border-radius: 20px;
+    font-weight: 500;
   }
 
-  .project-links {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-  }
   .btn-link-action {
     font-family: var(--font-mono);
     font-size: 13px;
@@ -689,54 +795,69 @@
     transition: all 0.2s ease;
   }
   .btn-link-action.primary {
-    background: var(--ink);
-    color: var(--bg);
+    background: var(--accent-gradient);
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px var(--accent-glow);
   }
   .btn-link-action.primary:hover {
-    background: var(--accent);
-    color: #07090C;
     transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(110, 68, 255, 0.3);
   }
   .btn-link-action.ghost {
+    background: var(--card);
     border: 1px solid var(--line);
-    color: var(--ink-dim);
+    color: var(--ink);
   }
   .btn-link-action.ghost:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--accent-bright);
+    color: var(--accent-bright);
   }
   .btn-link-action.disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
-    border: 1px solid var(--line-subtle);
-  }
-
-  /* Visuel des projets */
-  .project-visual {
-    background: var(--bg-card);
+    background: var(--bg-alt);
     border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 24px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-    transition: border-color 0.3s ease;
-  }
-  .project-visual:hover {
-    border-color: var(--accent);
+    color: var(--muted);
+    cursor: not-allowed;
   }
 
-  /* Topology SVG animations */
-  .topo-header {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--accent);
+  /* Fenêtre visuelle de projet (Style console PowerShell claire/violette) */
+  .project-visual {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 16px 36px rgba(20, 21, 26, 0.05);
+    transition: border-color 0.25s ease;
+  }
+  .project-visual:hover { border-color: var(--accent-bright); }
+
+  .pwsh-window {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #FAF9F6;
+  }
+  .pwsh-titlebar {
+    background: var(--bg-alt);
+    padding: 9px 14px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--ink-dim);
     border-bottom: 1px solid var(--line);
   }
+  .pwsh-dots { display: flex; gap: 6px; }
+  .pwsh-dot { width: 9px; height: 9px; border-radius: 50%; background: #D1CFC9; }
+  .pwsh-body {
+    padding: 24px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+
+  /* Topologie SVG adaptée au mode Clair Blanc & Violet */
   .topo-svg { width: 100%; height: auto; display: block; }
   .packet-flow {
     stroke-dasharray: 6, 8;
@@ -746,779 +867,631 @@
     from { stroke-dashoffset: 28; }
     to { stroke-dashoffset: 0; }
   }
-  .topo-node {
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  .topo-node:hover {
-    filter: drop-shadow(0 0 8px var(--accent));
-  }
+  .topo-node { cursor: pointer; transition: transform 0.2s; }
+  .topo-node:hover { filter: drop-shadow(0 4px 10px rgba(110, 68, 255, 0.25)); }
   .topo-info-box {
     margin-top: 14px;
     padding: 10px 14px;
     border-radius: 8px;
-    background: #06080B;
+    background: var(--bg-alt);
     border: 1px solid var(--line);
     font-family: var(--font-mono);
-    font-size: 11.5px;
-    color: var(--ink-dim);
+    font-size: 12px;
+    color: var(--ink);
   }
 
-  /* Mockup site CBVOM */
-  .browser-mockup {
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: #000;
-  }
-  .browser-bar {
-    background: #121620;
-    padding: 8px 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .mock-dots { display: flex; gap: 5px; }
-  .mock-dot { width: 8px; height: 8px; border-radius: 50%; background: #2A3342; }
-  .browser-preview-content {
-    padding: 40px 24px;
-    text-align: center;
-    background: linear-gradient(180deg, #0B0E14 0%, #06080B 100%);
-  }
-
-  /* ---------- 6. SHELF AUTRES PROJETS ---------- */
-  .section-shelf {
-    padding: 100px 0;
-    border-top: 1px solid var(--line-subtle);
-    border-bottom: 1px solid var(--line-subtle);
-  }
+  /* Autres projets en grille */
   .shelf-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
+    gap: 22px;
+    margin-top: 48px;
   }
   .shelf-card {
-    background: var(--bg-card);
+    background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 30px;
+    border-radius: 14px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.25s ease;
   }
   .shelf-card:hover {
-    border-color: var(--accent);
+    border-color: var(--accent-bright);
     transform: translateY(-4px);
+    box-shadow: 0 12px 28px -8px var(--accent-glow);
   }
   .shelf-card h4 {
     font-family: var(--font-heading);
-    font-size: 20px;
-    margin-bottom: 12px;
+    font-size: 19px;
+    margin-bottom: 10px;
   }
   .shelf-card p {
     font-size: 14.5px;
     color: var(--muted);
-    line-height: 1.6;
     margin-bottom: 20px;
   }
 
-  /* ---------- 7. PARCOURS & FORMATION ---------- */
-  .section-timeline {
-    padding: 120px 0;
-  }
-  .timeline-list {
-    max-width: 800px;
-    margin: 40px auto 0;
-    border-left: 2px solid var(--line);
-    padding-left: 32px;
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-  }
-  .timeline-item:last-child { margin-bottom: 0; }
-  .timeline-dot {
-    position: absolute;
-    left: -39px;
-    top: 6px;
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 8px var(--accent);
-  }
-  .timeline-date {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-  .timeline-title {
-    font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .timeline-desc {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  /* ---------- 8. CONTACT & FOOTER ---------- */
-  .section-contact {
-    padding: 140px 0 80px;
-    border-top: 1px solid var(--line-subtle);
+  /* ---------- 7. CONTACT (contact.ps1) ---------- */
+  .contact-box {
+    border: 1px solid var(--line);
+    background: var(--card);
+    padding: 64px 40px;
+    border-radius: 18px;
     text-align: center;
+    box-shadow: 0 16px 40px rgba(20, 21, 26, 0.04);
   }
-  .contact-title {
-    font-family: var(--font-heading);
-    font-size: clamp(40px, 8vw, 92px);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
-    background: var(--silver-grad);
+  .contact-box h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 54px);
+    margin-bottom: 16px;
+    background: var(--hero-word-grad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 24px;
-    text-transform: uppercase;
   }
-  .contact-sub {
-    font-size: 18px;
+  .contact-box p {
     color: var(--muted);
-    max-width: 580px;
-    margin: 0 auto 48px;
+    max-width: 540px;
+    margin: 0 auto 36px;
+    font-size: 17px;
   }
   .contact-btns {
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 60px;
+    margin-bottom: 36px;
   }
-  .btn-magnetic {
+  .contact-links {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
     font-family: var(--font-mono);
     font-size: 14px;
-    font-weight: 600;
-    padding: 16px 34px;
-    border-radius: 40px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-  .btn-magnetic.wa {
-    background: var(--ink);
-    color: var(--bg);
-  }
-  .btn-magnetic.wa:hover {
-    background: var(--accent);
-    color: #07090C;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px var(--accent-glow);
-  }
-  .btn-magnetic.mail {
-    border: 1px solid var(--line);
-    color: var(--ink);
-    background: rgba(255,255,255,0.02);
-  }
-  .btn-magnetic.mail:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-3px);
-  }
-
-  .contact-meta-row {
-    display: flex;
     justify-content: center;
-    gap: 36px;
-    font-family: var(--font-mono);
-    font-size: 13.5px;
-    color: var(--ink-dim);
-    margin-bottom: 60px;
-    flex-wrap: wrap;
   }
-  .contact-meta-row a {
-    transition: color 0.2s;
+  .contact-links a {
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
   }
-  .contact-meta-row a:hover {
-    color: var(--accent);
+  .contact-links a:hover {
+    border-color: var(--accent-bright);
+    color: var(--accent-bright);
   }
 
   footer {
-    padding: 36px 0;
-    border-top: 1px solid var(--line-subtle);
+    padding: 40px 0;
     font-family: var(--font-mono);
-    font-size: 12.5px;
+    font-size: 13px;
     color: var(--muted);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    text-align: center;
   }
 
-  /* Responsive Mobile */
   @media (max-width: 860px) {
-    .nav-center { display: none; }
-    .intro-grid { grid-template-columns: 1fr; gap: 32px; }
-    .services-top-bar { flex-direction: column; align-items: flex-start; }
-    .service-row { grid-template-columns: 40px 1fr 30px; gap: 16px; }
+    .nav-links, .btn-nav-pwsh { display: none; }
+    .menu-btn { display: block; }
+    .nav-links.open {
+      display: flex;
+      position: fixed;
+      top: var(--nav-h); left: 0;
+      width: 100%; height: calc(100vh - var(--nav-h));
+      background: var(--bg);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      gap: 28px;
+    }
+    .intro-grid, .bilan-grid, .project-item, .project-item.reverse, .shelf-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-row { grid-template-columns: 45px 1fr 30px; }
     .service-desc { display: none; }
-    .project-item, .project-item.reverse { grid-template-columns: 1fr; gap: 32px; }
-    .shelf-grid { grid-template-columns: 1fr; }
     .hero-bottom-bar { flex-direction: column; align-items: flex-start; }
-    footer { flex-direction: column; text-align: center; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation: none !important;
-      transition: none !important;
-    }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
     #intro-overlay { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- 0. INTRO SCRAMBLE OVERLAY -->
+<!-- 0. SÉQUENCE D'INTRO LENTE EN 3 TEMPS : SOKKA04 -> PORTEFOLIO -> YOHANN -->
 <div id="intro-overlay">
+  <div class="intro-pwsh-bar">
+    <span>PS C:\Users\Sokka04&gt;</span>
+    <span id="intro-cmd-text">./init-identity.ps1</span>
+    <span class="cursor-blink"></span>
+  </div>
+
   <div class="intro-word" id="intro-scramble-word">SOKKA04</div>
-  <div class="intro-sub">// CLIQUEZ POUR ENTRER //</div>
+
+  <div class="intro-steps-dots">
+    <span class="step-pill active" id="step-1">1. SOKKA04</span>
+    <span>→</span>
+    <span class="step-pill" id="step-2">2. PORTEFOLIO</span>
+    <span>→</span>
+    <span class="step-pill" id="step-3">3. YOHANN</span>
+  </div>
+
+  <div class="intro-sub">// CLIQUEZ À TOUT MOMENT POUR PASSER //</div>
 </div>
 
-<!-- HEADER NAVBAR -->
+<!-- HEADER STICKY POWERSHELL -->
 <header>
   <nav>
-    <a href="#hero" class="brand">
-      <span class="brand-dot"></span>
-      <span>YOHANN SARAMBA</span>
+    <a href="#hero" class="logo">
+      <span class="ps-tag">PS</span>&nbsp;Sokka04&gt;<span class="cursor-blink"></span>
     </a>
 
-    <div class="nav-center">
-      <a href="#hero">HOME</a>
-      <a href="#about">ABOUT</a>
-      <a href="#stack">STACK</a>
-      <a href="#services">SERVICES</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#contact">CONTACT</a>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">cursus.md</a>
+      <a href="#bilan">bilan_s3_s4/</a>
+      <a href="#stack">stack.ps1</a>
+      <a href="#projects">saes_projets/</a>
+      <a href="#contact">contact.sh</a>
     </div>
 
-    <div class="nav-right-actions">
-      <button class="theme-toggle-btn" id="theme-btn" aria-label="Changer de thème">
-        <span id="theme-icon">☀️</span>
-      </button>
-      <a href="#contact" class="btn-pill-contact">Contact</a>
-    </div>
+    <a href="#contact" class="btn-nav-pwsh">./contact.sh</a>
+
+    <button class="menu-btn" id="menu-btn" aria-label="Menu">
+      <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
   </nav>
 </header>
 
 <main>
 
-  <!-- 1. HERO AVEC MOSAÏQUE CANVAS & PORTRAIT -->
+  <!-- 1. HERO SECTION (ASSEMBLAGE LENT DES MICRO-PIXELS SUR FOND CLAIR) -->
   <section class="hero-canvas-section" id="hero">
-    <!-- Canvas 2D interactif pour la mosaïque de carreaux -->
+    <!-- Barre de commande PowerShell supérieure -->
+    <div class="hero-pwsh-top">
+      <div class="pwsh-prompt-pill">
+        <span class="ps-dir">PS C:\Users\Sokka04\Portfolio&gt;</span>
+        <span class="ps-cmd">Get-Engineer</span> -Name "Yohann Saramba"
+      </div>
+      <div class="pwsh-render-status" id="pwsh-status">
+        [░░░░░░░░░░] 0% · Assemblage des pixels...
+      </div>
+    </div>
+
+    <!-- Canvas 2D interactif des 110 000 micro-pixels -->
     <canvas id="mosaic-canvas"></canvas>
 
-    <!-- Le mot géant "YOHANN" devant le buste -->
-    <div class="hero-giant-word-container">
-      <h1 class="hero-giant-word" id="hero-title-word">YOHANN</h1>
-    </div>
+    <!-- Mot Géant YOHANN + Barre inférieure parfaitement lisible -->
+    <div class="hero-bottom-stack">
+      <div class="hero-giant-word-container">
+        <h1 class="hero-giant-word" id="hero-title-word">YOHANN</h1>
+      </div>
 
-    <!-- Accroche et actions en bas du hero -->
-    <div class="hero-bottom-bar">
-      <div class="hero-title-group">
-        <h2>
-          Ingénieur Réseaux & Sécurité <span class="dim-italic">· Développeur Web</span>
-        </h2>
-        <div class="hero-availability-tag">
-          <span>●</span>
-          <span>Disponible dès le 01/11/2026 · Stage · Alternance · Freelance</span>
+      <div class="hero-bottom-bar">
+        <div class="hero-title-group">
+          <h2>
+            Ingénieur Réseaux & Sécurité <span class="dim-italic">· Développeur Web</span>
+          </h2>
+          <div class="hero-availability-tag">
+            <span>●</span>
+            <span>Disponible dès le 01/11/2026 · Stage · Alternance · Freelance</span>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-actions-right">
-        <a href="#about" class="btn-circle-down" aria-label="Descendre vers la bio">↓</a>
-        <a href="CV_Yohann_Saramba.pdf" class="btn-cta-cv" download="CV_Yohann_Saramba.pdf">
-          <span>Télécharger mon CV</span>
-          <span aria-hidden="true">↓</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. INTRO / BIO RÉVÉLÉE MOT PAR MOT -->
-  <section class="section-intro" id="about">
-    <div class="wrap">
-      <div class="intro-grid">
-        <div class="intro-left-label">Intro</div>
-        <div class="intro-right-card">
-          <p class="intro-text-reveal" id="intro-bio">
-            <!-- Injecté mot par mot par JavaScript pour l'illumination au scroll -->
-            Je suis Yohann Saramba (Sokka04). En formation d'ingénierie réseaux et systèmes à ESIG Global Success, je combine deux expertises complémentaires : l'architecture des infrastructures réseaux sécurisées et le développement web moderne. Là où un développeur s'arrête au code, j'analyse la segmentation, le routage des paquets et la cryptographie appliquée pour concevoir des systèmes résilients de bout en bout.
-          </p>
+        <div class="hero-actions-right">
+          <a href="#projects" class="btn-pwsh-primary">
+            <span>Voir mes projets</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a href="CV_Yohann_Saramba.pdf" class="btn-pwsh-cv" download="CV_Yohann_Saramba.pdf">
+            <span>Télécharger mon CV</span>
+            <span aria-hidden="true">↓</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. THE STACK (MARQUEE ROWS ALTERNÉES) -->
+  <!-- 2. À PROPOS (cursus.md) -->
+  <section id="about" class="wrap">
+    <div class="eyebrow">Get-Content ./cursus.md</div>
+    <h2 class="section-heading">À propos de mon parcours</h2>
+
+    <div class="intro-grid">
+      <div class="intro-bio-card">
+        <p class="intro-text-reveal" id="intro-bio">
+          Je m'appelle YAWO Saramba Yohann (alias Sokka04). En 2ème année de Licence Systèmes et Réseaux Informatiques à ESIG Global Success (Semestres 3 et 4 validés), je combine l'architecture des infrastructures réseaux sécurisées (routage, VLANs, cryptographie) et le développement d'applications web complètes. Là où un développeur s'arrête au code, j'analyse les flux de paquets, le cloisonnement et la sécurité de bout en bout.
+        </p>
+      </div>
+
+      <div class="fact-list">
+        <div class="fact-list-header">
+          <span>Propriété</span>
+          <span>Valeur</span>
+        </div>
+        <div class="fact-row"><span>Identité</span><span>Yohann Saramba (Sokka04)</span></div>
+        <div class="fact-row"><span>Établissement</span><span>ESIG Global Success</span></div>
+        <div class="fact-row"><span>Niveau</span><span>Licence 2 (S3 & S4 Validés)</span></div>
+        <div class="fact-row"><span>Spécialité</span><span>Systèmes, Réseaux & Sécurité</span></div>
+        <div class="fact-row"><span>Disponibilité</span><span style="color:var(--accent-bright);">Dès le 01/11/2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BILAN S3 / S4 (bilan_s3_s4/) -->
+  <section id="bilan" class="wrap">
+    <div class="eyebrow">Get-ChildItem ./bilan_s3_s4/</div>
+    <h2 class="section-heading">Bilan des Compétences Validées (S3 & S4)</h2>
+
+    <div class="bilan-grid">
+      <div class="bilan-card">
+        <h3>Semestre 3 : Consolidation des fondations techniques</h3>
+        <p>Acquisition de bases solides en infrastructure, gestion de données et cryptographie fondamentale :</p>
+        <ul>
+          <li><strong>Administration Réseau & Télécoms :</strong> Maîtrise de la commutation et du routage statique/dynamique (VLAN, STP, EtherChannel). Étude des réseaux mobiles (1G à 5G) et SIG (QGIS).</li>
+          <li><strong>Ingénierie Logicielle & Données :</strong> Conception et administration de bases de données relationnelles (SQL) et NoSQL.</li>
+          <li><strong>Sécurité & Infra :</strong> Virtualisation (hyperviseurs, Docker), cryptographie appliquée et sécurité réseau (AES, RSA, HTTPS/TLS, VPN, Wireshark).</li>
+          <li><strong>Transverse :</strong> Gestion de projet (MOA/MOE, Gantt) et plan de migration IPv4 vers IPv6.</li>
+        </ul>
+      </div>
+
+      <div class="bilan-card">
+        <h3>Semestre 4 : Architecture Avancée & Sécurité</h3>
+        <p>Montée en compétence sur l'analyse de systèmes complexes, l'optimisation et la sécurisation des architectures :</p>
+        <ul>
+          <li><strong>Réseaux Avancés :</strong> Validation des compétences CCNA 3 (Routage dynamique OSPF, WAN, Haute disponibilité). Modèles OSI/TCP-IP et supports de transmission (fibre optique, sans-fil).</li>
+          <li><strong>Conception de S.I. :</strong> Analyse et conception de Systèmes d'Information (MERISE, modélisation UML).</li>
+          <li><strong>Sciences de l'Ingénieur :</strong> Recherche opérationnelle (programmation linéaire, optimisation par les graphes) et analyse numérique.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE STACK (MARQUEE DYNAMIQUE CLAIR & VIOLET) -->
   <section class="section-stack" id="stack">
-    <div class="wrap">
-      <div class="stack-header-line">
-        <span class="stack-label">THE STACK</span>
-        <div class="stack-divider"></div>
-      </div>
+    <div class="wrap" style="margin-bottom: 28px;">
+      <div class="eyebrow">./stack.ps1 --list-all</div>
+      <h2 class="section-heading" style="margin-bottom: 8px;">Référentiel Technique par Domaine</h2>
     </div>
 
-    <!-- Rangée 1 : Réseaux & Télécoms -->
+    <!-- Rangée 1 : Réseaux & Infra -->
     <div class="marquee-track">
       <div class="marquee-inner">
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Cisco CCNA 3</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>VLAN 802.1Q</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Routage OSPF & RIP</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Spanning Tree (STP)</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>EtherChannel</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Liaisons WAN & Fibre</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Modèles OSI & TCP/IP</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Cisco Packet Tracer</div>
-        <!-- Duplication pour boucle infinie -->
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Cisco CCNA 3</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>VLAN 802.1Q</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Routage OSPF & RIP</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Spanning Tree (STP)</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>EtherChannel</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Liaisons WAN & Fibre</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Cisco CCNA 3 (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>VLAN 802.1Q & STP (Quotidien)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Routage Dynamique OSPF (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>EtherChannel & Trunking (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Modèles OSI & TCP/IP (Quotidien)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Virtualisation & Docker (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Cisco CCNA 3 (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>VLAN 802.1Q & STP (Quotidien)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Routage Dynamique OSPF (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>EtherChannel & Trunking (Solide)</div>
       </div>
     </div>
 
-    <!-- Rangée 2 : Sécurité & Cryptographie (Sens inverse) -->
+    <!-- Rangée 2 : Sécurité & Crypto -->
     <div class="marquee-track reverse">
       <div class="marquee-inner">
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Cryptographie AES & RSA</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Authentification JWT</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Protocoles HTTPS & TLS</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>VPN IPsec</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>ACLs de Sécurité</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Wireshark Packet Analysis</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Cloisonnement DMZ</div>
-        <!-- Duplication -->
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Cryptographie AES & RSA</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Authentification JWT</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Protocoles HTTPS & TLS</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>VPN IPsec</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>ACLs de Sécurité</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Wireshark Packet Analysis</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Cryptographie AES & RSA (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Authentification JWT (Quotidien)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Protocoles HTTPS / TLS / VPN (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Analyse Trames Wireshark (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Filtrage ACLs & DMZ (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Cryptographie AES & RSA (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Authentification JWT (Quotidien)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Protocoles HTTPS / TLS / VPN (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Analyse Trames Wireshark (Solide)</div>
       </div>
     </div>
 
     <!-- Rangée 3 : Développement Web & BDD -->
     <div class="marquee-track">
       <div class="marquee-inner">
-        <div class="stack-pill"><span class="stack-pill-dot"></span>React.js</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Node.js</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>TypeScript</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>PHP & Laravel</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Django & Python</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>PostgreSQL & MySQL</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>HTML5 / CSS3 Pur</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Shopify / Liquid</div>
-        <!-- Duplication -->
-        <div class="stack-pill"><span class="stack-pill-dot"></span>React.js</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Node.js</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>TypeScript</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>PHP & Laravel</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Django & Python</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>PostgreSQL & MySQL</div>
-      </div>
-    </div>
-
-    <!-- Rangée 4 : Systèmes & Outils (Sens inverse) -->
-    <div class="marquee-track reverse">
-      <div class="marquee-inner">
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Linux / Debian</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Docker</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Git & GitHub</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Bash Scripting</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Conception MERISE & UML</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Recherche Opérationnelle</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>SIG QGIS</div>
-        <!-- Duplication -->
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Linux / Debian</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Docker</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Git & GitHub</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Bash Scripting</div>
-        <div class="stack-pill"><span class="stack-pill-dot"></span>Conception MERISE & UML</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>React, Node.js, TypeScript (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>PHP & Laravel (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Django & Python (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>MySQL & PostgreSQL (Quotidien)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>HTML5 / CSS3 / JS Pur (Quotidien)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>Shopify & Liquid (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>React, Node.js, TypeScript (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>PHP & Laravel (Solide)</div>
+        <div class="stack-pill"><span class="stack-pill-dot"></span>MySQL & PostgreSQL (Quotidien)</div>
       </div>
     </div>
   </section>
 
-  <!-- 4. CE QUE JE FAIS (ACCORDÉON SERVICES) -->
-  <section class="section-services" id="services">
-    <div class="wrap">
-      <div class="services-top-bar">
-        <h2 class="section-title-big">Ce que<br>je réalise</h2>
-        <p class="mono" style="color:var(--muted); font-size:13px;">SERVICES & COMPÉTENCES OPÉRATIONNELLES</p>
+  <!-- 5. CE QUE JE RÉALISE (SERVICES) -->
+  <section id="services" class="wrap">
+    <div class="eyebrow">Invoke-Services --domaines</div>
+    <h2 class="section-heading">Domaines d'Intervention</h2>
+
+    <div>
+      <div class="service-row">
+        <div class="service-num">01</div>
+        <div class="service-name">Architecture & Segmentation Réseau</div>
+        <div class="service-desc">Conception de topologies d'entreprise, découpage en VLANs, routage inter-VLAN et haute disponibilité.</div>
+        <div class="service-arrow">↗</div>
       </div>
-
-      <div class="services-accordion">
-        <div class="service-row">
-          <div class="service-num">01</div>
-          <div class="service-name">Infrastructures Réseaux d'Entreprise</div>
-          <div class="service-desc">Conception d'architectures locales, segmentation par VLANs 802.1Q, plan d'adressage IPv4/IPv6 et routage dynamique (OSPF).</div>
-          <div class="service-arrow">↗</div>
-        </div>
-
-        <div class="service-row">
-          <div class="service-num">02</div>
-          <div class="service-name">Sécurité Réseau & Cloisonnement</div>
-          <div class="service-desc">Mise en place de listes de contrôle d'accès (ACLs), isolation de DMZ, protocoles sécurisés (HTTPS, TLS, VPN) et inspection de trames.</div>
-          <div class="service-arrow">↗</div>
-        </div>
-
-        <div class="service-row">
-          <div class="service-num">03</div>
-          <div class="service-name">Développement Web Fullstack & APIs</div>
-          <div class="service-desc">Création d'applications complètes et d'APIs REST protégées avec React, Node.js, PHP/Laravel et bases de données relationnelles.</div>
-          <div class="service-arrow">↗</div>
-        </div>
-
-        <div class="service-row">
-          <div class="service-num">04</div>
-          <div class="service-name">Sites Web Vitrines & E-commerce</div>
-          <div class="service-desc">Développement sur mesure sans framework lourd (HTML5/CSS/JS/PHP) ou intégration de boutiques Shopify (Liquid) optimisées pour mobile.</div>
-          <div class="service-arrow">↗</div>
-        </div>
+      <div class="service-row">
+        <div class="service-num">02</div>
+        <div class="service-name">Sécurisation Backend & Contrôle d'Accès</div>
+        <div class="service-desc">Chiffrement des données sensibles, authentification stateless JWT, listes d'accès (ACLs) et audit de flux.</div>
+        <div class="service-arrow">↗</div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">03</div>
+        <div class="service-name">Applications Web & APIs Fullstack</div>
+        <div class="service-desc">Développement d'interfaces React/TypeScript et de backends Node.js, PHP/Laravel ou Python/Django avec SQL.</div>
+        <div class="service-arrow">↗</div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">04</div>
+        <div class="service-name">Sites Vitrines Rapides & E-Commerce</div>
+        <div class="service-desc">Sites web sur mesure sans dépendances lourdes (comme CBVOM) et plateformes e-commerce Shopify/Liquid.</div>
+        <div class="service-arrow">↗</div>
       </div>
     </div>
   </section>
 
-  <!-- 5. ÉTUDES DE CAS (SELECTED WORK) -->
-  <section class="section-projects" id="projects">
-    <div class="wrap">
-      <div style="margin-bottom:70px;">
-        <p class="mono" style="color:var(--accent); font-size:12px; letter-spacing:0.15em; text-transform:uppercase;">ÉTUDES DE CAS</p>
-        <h2 class="section-title-big">Projets Clés</h2>
+  <!-- 6. ÉTUDES DE CAS & RÉALISATIONS (saes_projets/) -->
+  <section id="projects" class="wrap">
+    <div class="eyebrow">Get-CaseStudies ./saes_projets/</div>
+    <h2 class="section-heading">Études de Cas & Réalisations</h2>
+
+    <!-- PROJET 1 : Backend ESIG -->
+    <div class="project-item">
+      <div class="project-info">
+        <div class="project-counter">01 // BACKEND & CRYPTOGRAPHIE</div>
+        <h3>Refonte Backend du SI de l'ESIG</h3>
+        <p class="summary">
+          Conception et développement de l'architecture backend pour le système d'information de l'école avec sécurisation cryptographique des données sensibles.
+        </p>
+
+        <div class="project-specs">
+          <div class="spec-row">
+            <span class="spec-label">Contexte</span>
+            <span class="spec-value">Système d'information académique gérant des données étudiantes</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Mon Rôle</span>
+            <span class="spec-value">Logique métier, modélisation de la base de données et sécurité applicative</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Solution</span>
+            <span class="spec-value">Chiffrement des données sensibles, authentification par jetons JWT, BDD relationnelle</span>
+          </div>
+        </div>
+
+        <div class="project-tags">
+          <span class="project-tag">Backend</span>
+          <span class="project-tag">Sécurité</span>
+          <span class="project-tag">Cryptographie</span>
+          <span class="project-tag">JWT</span>
+          <span class="project-tag">Base de Données</span>
+        </div>
+
+        <span class="btn-link-action disabled">Code source privé (Projet Académique)</span>
       </div>
 
-      <!-- PROJET 1 : Backend sécurisé SI ESIG -->
-      <div class="project-item">
-        <div class="project-info">
-          <div class="project-counter">01 // SYSTÈME D'INFORMATION</div>
-          <h3>Backend Sécurisé du SI de l'ESIG</h3>
-          <p class="summary">
-            Refonte et sécurisation de l'architecture backend pour la gestion des flux académiques et des données sensibles de l'établissement.
-          </p>
-
-          <div class="project-specs">
-            <div class="spec-row">
-              <span class="spec-label">Contexte</span>
-              <span class="spec-value">Système universitaire avec gestion de notes et comptes étudiants</span>
-            </div>
-            <div class="spec-row">
-              <span class="spec-label">Mon Rôle</span>
-              <span class="spec-value">Conception de l'architecture backend, modélisation BDD et sécurisation</span>
-            </div>
-            <div class="spec-row">
-              <span class="spec-label">Solution</span>
-              <span class="spec-value">Authentification JWT signée, chiffrement des données sensibles, validation stricte</span>
-            </div>
+      <div class="project-visual">
+        <div class="pwsh-window">
+          <div class="pwsh-titlebar">
+            <div class="pwsh-dots"><div class="pwsh-dot"></div><div class="pwsh-dot"></div><div class="pwsh-dot"></div></div>
+            <span>pwsh — esig-backend-sec.ps1</span>
           </div>
-
-          <div class="project-tags">
-            <span class="project-tag">Backend</span>
-            <span class="project-tag">JWT Auth</span>
-            <span class="project-tag">Chiffrement</span>
-            <span class="project-tag">Bases SQL</span>
-          </div>
-
-          <div class="project-links">
-            <span class="btn-link-action disabled">Dépôt privé académique</span>
-          </div>
-        </div>
-
-        <div class="project-visual">
-          <div class="browser-mockup">
-            <div class="browser-bar">
-              <div class="mock-dots"><div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div></div>
-              <span>api.esig.lan/v1/auth/verify</span>
-            </div>
-            <div class="browser-preview-content">
-              <div class="mono" style="font-size:12px; color:var(--accent); text-align:left; background:#07090C; padding:18px; border-radius:8px; line-height:1.7;">
-                <span style="color:var(--muted);">// Authentification sécurisée ESIG</span><br>
-                POST /api/v1/auth/login HTTP/1.1<br>
-                Status: <span style="color:var(--emerald);">200 OK</span><br>
-                Payload: { "token": "eyJhbGciOi...", "scope": "student:read" }<br>
-                Security: AES Encrypted Session Active
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJET 2 : Infrastructure Intranet & Topologie Réseau Animée -->
-      <div class="project-item reverse">
-        <div class="project-info">
-          <div class="project-counter">02 // INFRASTRUCTURE RÉSEAU</div>
-          <h3>Intranet d'Entreprise & Segmentation VLAN</h3>
-          <p class="summary">
-            Déploiement d'une infrastructure réseau locale sécurisée pour un environnement multi-services avec cloisonnement strict et routage inter-VLAN.
-          </p>
-
-          <div class="project-specs">
-            <div class="spec-row">
-              <span class="spec-label">Contexte</span>
-              <span class="spec-value">Architecture réseau locale d'entreprise segmentée</span>
-            </div>
-            <div class="spec-row">
-              <span class="spec-label">Mon Rôle</span>
-              <span class="spec-value">Plan d'adressage, configuration des switchs/routeurs et règles de sécurité</span>
-            </div>
-            <div class="spec-row">
-              <span class="spec-label">Solution</span>
-              <span class="spec-value">VLANs 802.1Q (Admin, Staff, DMZ), routage inter-VLAN, règles d'isolation par ACLs</span>
-            </div>
-          </div>
-
-          <div class="project-tags">
-            <span class="project-tag">Cisco IOS</span>
-            <span class="project-tag">VLAN 802.1Q</span>
-            <span class="project-tag">Routage Inter-VLAN</span>
-            <span class="project-tag">ACLs</span>
-          </div>
-
-          <div class="project-links">
-            <a href="#topo-display" class="btn-link-action ghost">Inspecter la topologie ↓</a>
-          </div>
-        </div>
-
-        <div class="project-visual" id="topo-display">
-          <div class="topo-header">
-            <span>// TOPOLOGIE OSPF EN DIRECT · CLIQUEZ POUR INSPECTER</span>
-            <span style="color:var(--emerald);">● ACTIF</span>
-          </div>
-
-          <svg class="topo-svg" viewBox="0 0 760 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="380" y1="36" x2="380" y2="100" stroke="#1C2331" stroke-width="3" />
-            <line x1="380" y1="100" x2="140" y2="175" stroke="#1C2331" stroke-width="2.5" />
-            <line x1="380" y1="100" x2="380" y2="175" stroke="#1C2331" stroke-width="2.5" />
-            <line x1="380" y1="100" x2="620" y2="175" stroke="#1C2331" stroke-width="2.5" />
-
-            <line x1="380" y1="36" x2="380" y2="100" stroke="var(--accent)" stroke-width="2.5" class="packet-flow" />
-            <line x1="380" y1="100" x2="140" y2="175" stroke="var(--accent)" stroke-width="2" class="packet-flow" />
-            <line x1="380" y1="100" x2="380" y2="175" stroke="#3B82F6" stroke-width="2" class="packet-flow" />
-            <line x1="380" y1="100" x2="620" y2="175" stroke="var(--emerald)" stroke-width="2" class="packet-flow" />
-
-            <!-- Nœud Routeur -->
-            <g class="topo-node" transform="translate(380, 36)" onclick="showNodeDetails('Routeur Edge', '192.168.1.1 - Passerelle par défaut, NAT & Pare-feu')">
-              <rect x="-65" y="-20" width="130" height="40" rx="8" fill="#0C1017" stroke="var(--accent)" stroke-width="1.8" />
-              <text x="0" y="-2" fill="#F0F4F8" font-family="JetBrains Mono" font-size="11" font-weight="700" text-anchor="middle">ROUTEUR EDGE</text>
-              <text x="0" y="11" fill="var(--accent)" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">192.168.1.1 / GW</text>
-            </g>
-
-            <!-- Nœud Switch Core -->
-            <g class="topo-node" transform="translate(380, 100)" onclick="showNodeDetails('Switch Core L2/L3', 'Agrégation 802.1Q Trunk vers tous les VLANs')">
-              <rect x="-75" y="-16" width="150" height="34" rx="6" fill="#0C1017" stroke="#3B82F6" stroke-width="1.5" />
-              <text x="0" y="0" fill="#F0F4F8" font-family="JetBrains Mono" font-size="10.5" font-weight="600" text-anchor="middle">SWITCH CORE L2/L3</text>
-              <text x="0" y="12" fill="#64748B" font-family="JetBrains Mono" font-size="8.5" text-anchor="middle">802.1Q TRUNK</text>
-            </g>
-
-            <!-- VLAN 10 -->
-            <g class="topo-node" transform="translate(140, 175)" onclick="showNodeDetails('VLAN 10 · Administration', '10.10.10.0/24 - Accès SSH/Console direct, filtrage ACL strict')">
-              <rect x="-60" y="-20" width="120" height="40" rx="8" fill="#0C1017" stroke="var(--accent)" stroke-width="1.4" />
-              <text x="0" y="-3" fill="#F0F4F8" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 10 · ADMIN</text>
-              <text x="0" y="10" fill="var(--muted)" font-family="JetBrains Mono" font-size="8" text-anchor="middle">10.10.10.0/24</text>
-            </g>
-
-            <!-- VLAN 20 -->
-            <g class="topo-node" transform="translate(380, 175)" onclick="showNodeDetails('VLAN 20 · Employés', '10.10.20.0/24 - Postes de travail, accès isolé vers la DMZ')">
-              <rect x="-60" y="-20" width="120" height="40" rx="8" fill="#0C1017" stroke="#3B82F6" stroke-width="1.4" />
-              <text x="0" y="-3" fill="#F0F4F8" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 20 · STAFF</text>
-              <text x="0" y="10" fill="var(--muted)" font-family="JetBrains Mono" font-size="8" text-anchor="middle">10.10.20.0/24</text>
-            </g>
-
-            <!-- VLAN 30 -->
-            <g class="topo-node" transform="translate(620, 175)" onclick="showNodeDetails('VLAN 30 · DMZ & Serveurs', '10.10.30.0/24 - Serveurs de données, cloisonnement total')">
-              <rect x="-60" y="-20" width="120" height="40" rx="8" fill="#0C1017" stroke="var(--emerald)" stroke-width="1.4" />
-              <text x="0" y="-3" fill="#F0F4F8" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 30 · DMZ</text>
-              <text x="0" y="10" fill="var(--muted)" font-family="JetBrains Mono" font-size="8" text-anchor="middle">10.10.30.0/24</text>
-            </g>
-          </svg>
-
-          <div class="topo-info-box" id="topo-status-box">
-            Cliquez sur un nœud ci-dessus pour inspecter sa configuration et ses ACLs.
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJET 3 : CBVOM -->
-      <div class="project-item">
-        <div class="project-info">
-          <div class="project-counter">03 // DÉVELOPPEMENT WEB EN PRODUCTION</div>
-          <h3>CBVOM — Cabinet d'Optique Médicale</h3>
-          <p class="summary">
-            Conception et développement intégral d'un site vitrine médical à chargement minimal, développé en pur web natif sans framework encombrant.
-          </p>
-
-          <div class="project-specs">
-            <div class="spec-row">
-              <span class="spec-label">Contexte</span>
-              <span class="spec-value">Présence en ligne et prise de rendez-vous pour un cabinet d'optique</span>
-            </div>
-            <div class="spec-row">
-              <span class="spec-label">Mon Rôle</span>
-              <span class="spec-value">Intégration complète Front-end & Back-end, mise en production</span>
-            </div>
-            <div class="spec-row">
-              <span class="spec-label">Solution</span>
-              <span class="spec-value">HTML5 sémantique, CSS3 moderne, Vanilla JavaScript, PHP natif</span>
-            </div>
-          </div>
-
-          <div class="project-tags">
-            <span class="project-tag">HTML5 / CSS3</span>
-            <span class="project-tag">JavaScript Natif</span>
-            <span class="project-tag">PHP</span>
-            <span class="project-tag">Production</span>
-          </div>
-
-          <div class="project-links">
-            <a href="https://cbvom.com" target="_blank" rel="noopener" class="btn-link-action primary">
-              <span>Visiter cbvom.com</span>
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="project-visual">
-          <div class="browser-mockup">
-            <div class="browser-bar">
-              <div class="mock-dots"><div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div></div>
-              <span>https://cbvom.com</span>
-            </div>
-            <div class="browser-preview-content">
-              <h4 style="font-family:var(--font-heading); font-size:24px; color:var(--ink); margin-bottom:8px;">Cabinet CBVOM</h4>
-              <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">Optométrie · Santé Visuelle · Montures & Verres</p>
-              <div class="mono" style="display:inline-block; font-size:12px; color:var(--emerald); background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); padding:6px 14px; border-radius:20px;">
-                ● SITE EN LIGNE & OPÉRATIONNEL
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 6. SHELF AUTRES PROJETS -->
-  <section class="section-shelf">
-    <div class="wrap">
-      <p class="mono" style="color:var(--accent); font-size:12px; letter-spacing:0.15em; text-transform:uppercase;">AUTRES TRAVAUX</p>
-      <h3 style="font-family:var(--font-heading); font-size:32px; font-weight:700; margin-top:6px;">Réalisations Complémentaires</h3>
-
-      <div class="shelf-grid">
-        <div class="shelf-card">
-          <div>
-            <div class="mono" style="font-size:11px; color:var(--muted); margin-bottom:8px;">E-COMMERCE // SHOPIFY</div>
-            <h4>Boutique Saahelstore</h4>
-            <p>Boutique e-commerce opérationnelle développée avec Liquid et personnalisée pour une expérience d'achat mobile fluide.</p>
-          </div>
-          <div>
-            <a href="https://saahelstore.com" target="_blank" rel="noopener" class="btn-link-action ghost" style="width:100%; justify-content:center;">
-              Voir la boutique ↗
-            </a>
-          </div>
-        </div>
-
-        <div class="shelf-card">
-          <div>
-            <div class="mono" style="font-size:11px; color:var(--muted); margin-bottom:8px;">FULLSTACK // REACT & NODE</div>
-            <h4>My First SaaS</h4>
-            <p>Application web moderne avec authentification utilisateurs, gestion d'état et communication API REST.</p>
-          </div>
-          <div>
-            <a href="https://github.com/Sokka04/my-first-saas" target="_blank" rel="noopener" class="btn-link-action ghost" style="width:100%; justify-content:center;">
-              Code GitHub ↗
-            </a>
-          </div>
-        </div>
-
-        <div class="shelf-card">
-          <div>
-            <div class="mono" style="font-size:11px; color:var(--muted); margin-bottom:8px;">DESKTOP // ELECTRON & TS</div>
-            <h4>Apps Desktop Cross-Platform</h4>
-            <p>Outils et utilitaires de bureau développés avec Electron et TypeScript pour environnements Windows et Linux.</p>
-          </div>
-          <div>
-            <a href="https://github.com/Sokka04" target="_blank" rel="noopener" class="btn-link-action ghost" style="width:100%; justify-content:center;">
-              Dépôts GitHub ↗
-            </a>
+          <div class="pwsh-body">
+            <span style="color:var(--accent-cobalt); font-weight:600;">PS ESIG\Backend&gt;</span> Invoke-AuthVerify -Protocol JWT<br>
+            <span style="color:var(--muted);"># Vérification du chiffrement et des jetons d'accès</span><br>
+            [OK] Hashage des mots de passe actif<br>
+            [OK] Chiffrement symétrique des champs sensibles<br>
+            [OK] Signature HMAC-SHA256 du jeton JWT vérifiée<br>
+            <span style="color:var(--emerald); font-weight:600;">Status : Architecture Backend Opérationnelle</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- 7. PARCOURS & FORMATION (TIMELINE) -->
-  <section class="section-timeline">
-    <div class="wrap">
-      <div style="text-align:center;">
-        <p class="mono" style="color:var(--accent); font-size:12px; letter-spacing:0.15em; text-transform:uppercase;">PARCOURS</p>
-        <h2 class="section-title-big">Formation & Évolution</h2>
-      </div>
+    <!-- PROJET 2 : Infrastructure Intranet -->
+    <div class="project-item reverse">
+      <div class="project-info">
+        <div class="project-counter">02 // INFRASTRUCTURE RÉSEAU</div>
+        <h3>Infrastructure Réseau d'Entreprise (Intranet)</h3>
+        <p class="summary">
+          Conception et déploiement d'une infrastructure réseau locale sécurisée avec partitionnement logique par VLANs, routage inter-VLAN et gestion des accès.
+        </p>
 
-      <div class="timeline-list">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024 — EN COURS</div>
-          <div class="timeline-title">Licence Systèmes et Réseaux Informatiques</div>
-          <div class="timeline-desc">
-            ESIG Global Success — Semestres 3 et 4 validés.<br>
-            Commutation et routage avancé (CCNA 3, OSPF, STP), sécurité réseau, cryptographie fondamentale (AES, RSA, TLS), virtualisation et modélisation de systèmes d'information (MERISE, UML).
+        <div class="project-specs">
+          <div class="spec-row">
+            <span class="spec-label">Contexte</span>
+            <span class="spec-value">Réseau local d'entreprise nécessitant l'isolation des départements</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Mon Rôle</span>
+            <span class="spec-value">Plan d'adressage, configuration du routage/switching et services internes</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Solution</span>
+            <span class="spec-value">Segmentation VLANs, routage inter-VLAN, annuaire et contrôle d'accès par ACLs</span>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024 — 2026</div>
-          <div class="timeline-title">Projets Pratiques & Développement Indépendant</div>
-          <div class="timeline-desc">
-            Déploiement d'architectures réseaux simulées (Packet Tracer), développement et mise en ligne de sites web professionnels (CBVOM, Saahelstore) et exploration de stacks applicatives modernes.
+        <div class="project-tags">
+          <span class="project-tag">Réseau</span>
+          <span class="project-tag">VLAN 802.1Q</span>
+          <span class="project-tag">Routage</span>
+          <span class="project-tag">Administration Système</span>
+        </div>
+      </div>
+
+      <div class="project-visual">
+        <div class="mono" style="font-size:11.5px; color:var(--accent-cobalt); font-weight:600; margin-bottom:10px; display:flex; justify-content:space-between;">
+          <span>// TOPOLOGIE INTRANET INTERACTIVE (CLIQUEZ SUR UN NŒUD)</span>
+          <span style="color:var(--emerald);">● FLUX ACTIFS</span>
+        </div>
+
+        <svg class="topo-svg" viewBox="0 0 760 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="380" y1="36" x2="380" y2="96" stroke="#E4E2DC" stroke-width="3" />
+          <line x1="380" y1="96" x2="140" y2="170" stroke="#E4E2DC" stroke-width="2.5" />
+          <line x1="380" y1="96" x2="380" y2="170" stroke="#E4E2DC" stroke-width="2.5" />
+          <line x1="380" y1="96" x2="620" y2="170" stroke="#E4E2DC" stroke-width="2.5" />
+
+          <line x1="380" y1="36" x2="380" y2="96" stroke="#6E44FF" stroke-width="2.5" class="packet-flow" />
+          <line x1="380" y1="96" x2="140" y2="170" stroke="#6E44FF" stroke-width="2" class="packet-flow" />
+          <line x1="380" y1="96" x2="380" y2="170" stroke="#3454D1" stroke-width="2" class="packet-flow" />
+          <line x1="380" y1="96" x2="620" y2="170" stroke="#059669" stroke-width="2" class="packet-flow" />
+
+          <g class="topo-node" transform="translate(380, 36)" onclick="showNodeDetails('Routeur Principal', 'Routage Inter-VLAN, passerelle interne et règles ACL')">
+            <rect x="-68" y="-20" width="136" height="40" rx="8" fill="#FFFFFF" stroke="#6E44FF" stroke-width="2" />
+            <text x="0" y="-2" fill="#14151A" font-family="IBM Plex Mono" font-size="11" font-weight="700" text-anchor="middle">ROUTEUR CORE</text>
+            <text x="0" y="11" fill="#6E44FF" font-family="IBM Plex Mono" font-size="8.5" text-anchor="middle">192.168.1.1 / GW</text>
+          </g>
+
+          <g class="topo-node" transform="translate(380, 96)" onclick="showNodeDetails('Switch L2/L3', ' Liens 802.1Q Trunk et Spanning Tree Protocol (STP)')">
+            <rect x="-75" y="-16" width="150" height="34" rx="6" fill="#FFFFFF" stroke="#3454D1" stroke-width="1.8" />
+            <text x="0" y="0" fill="#14151A" font-family="IBM Plex Mono" font-size="10.5" font-weight="600" text-anchor="middle">SWITCH L2/L3</text>
+            <text x="0" y="12" fill="#5E6170" font-family="IBM Plex Mono" font-size="8.5" text-anchor="middle">802.1Q TRUNK</text>
+          </g>
+
+          <g class="topo-node" transform="translate(140, 170)" onclick="showNodeDetails('VLAN 10 · Admin', '10.10.10.0/24 — Administration système & supervision')">
+            <rect x="-62" y="-20" width="124" height="40" rx="8" fill="#FFFFFF" stroke="#6E44FF" stroke-width="1.6" />
+            <text x="0" y="-3" fill="#14151A" font-family="IBM Plex Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 10 · ADMIN</text>
+            <text x="0" y="10" fill="#5E6170" font-family="IBM Plex Mono" font-size="8" text-anchor="middle">10.10.10.0/24</text>
+          </g>
+
+          <g class="topo-node" transform="translate(380, 170)" onclick="showNodeDetails('VLAN 20 · Services', '10.10.20.0/24 — Postes collaborateurs cloisonnés')">
+            <rect x="-62" y="-20" width="124" height="40" rx="8" fill="#FFFFFF" stroke="#3454D1" stroke-width="1.6" />
+            <text x="0" y="-3" fill="#14151A" font-family="IBM Plex Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 20 · STAFF</text>
+            <text x="0" y="10" fill="#5E6170" font-family="IBM Plex Mono" font-size="8" text-anchor="middle">10.10.20.0/24</text>
+          </g>
+
+          <g class="topo-node" transform="translate(620, 170)" onclick="showNodeDetails('VLAN 30 · Serveurs', '10.10.30.0/24 — Annuaire interne & ressources partagées')">
+            <rect x="-62" y="-20" width="124" height="40" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.6" />
+            <text x="0" y="-3" fill="#14151A" font-family="IBM Plex Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 30 · SERVEURS</text>
+            <text x="0" y="10" fill="#5E6170" font-family="IBM Plex Mono" font-size="8" text-anchor="middle">10.10.30.0/24</text>
+          </g>
+        </svg>
+
+        <div class="topo-info-box" id="topo-status-box">
+          PS Intranet&gt; Cliquez sur un équipement ci-dessus pour inspecter sa configuration.
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJET 3 : CBVOM -->
+    <div class="project-item">
+      <div class="project-info">
+        <div class="project-counter">03 // SITE WEB EN PRODUCTION</div>
+        <h3>CBVOM — Cabinet d'Optique</h3>
+        <p class="summary">
+          Développement intégral d'un site vitrine pour un cabinet d'optique. Objectif : temps de chargement minimal et maintenance aisée grâce à un socle web pur sans framework lourd.
+        </p>
+
+        <div class="project-specs">
+          <div class="spec-row">
+            <span class="spec-label">Contexte</span>
+            <span class="spec-value">Site vitrine professionnel en production pour un cabinet d'optique</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Mon Rôle</span>
+            <span class="spec-value">Conception, intégration responsive, développement PHP et mise en ligne</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Solution</span>
+            <span class="spec-value">HTML5, CSS3, JavaScript natif et PHP sans dépendances superflues</span>
+          </div>
+        </div>
+
+        <div class="project-tags">
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">PHP Natif</span>
+          <span class="project-tag">En Production</span>
+        </div>
+
+        <a href="https://cbvom.com" target="_blank" rel="noopener" class="btn-link-action primary">
+          <span>Voir le site cbvom.com</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="project-visual">
+        <div class="pwsh-window">
+          <div class="pwsh-titlebar">
+            <div class="pwsh-dots"><div class="pwsh-dot"></div><div class="pwsh-dot"></div><div class="pwsh-dot"></div></div>
+            <span>https://cbvom.com</span>
+          </div>
+          <div class="pwsh-body" style="text-align:center; padding: 36px 20px;">
+            <div style="font-family:var(--font-heading); font-size:24px; font-weight:700; color:var(--ink); margin-bottom:6px;">CBVOM Optique</div>
+            <p style="color:var(--muted); font-family:var(--font-sans); font-size:14px; margin-bottom:18px;">Architecture légère · Chargement rapide · Responsive</p>
+            <a href="https://cbvom.com" target="_blank" rel="noopener" class="btn-link-action ghost">Ouvrir cbvom.com ↗</a>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- AUTRES PROJETS -->
+    <div class="shelf-grid">
+      <div class="shelf-card">
+        <div>
+          <div class="mono" style="font-size:11.5px; color:var(--accent-bright); font-weight:600; margin-bottom:6px;">E-COMMERCE // SHOPIFY</div>
+          <h4>Boutique Saahelstore</h4>
+          <p>Création d'une plateforme e-commerce opérationnelle avec le langage de templating Liquid (Shopify).</p>
+        </div>
+        <a href="https://saahelstore.com" target="_blank" rel="noopener" class="btn-link-action ghost" style="justify-content:center;">Voir saahelstore.com ↗</a>
+      </div>
+
+      <div class="shelf-card">
+        <div>
+          <div class="mono" style="font-size:11.5px; color:var(--accent-bright); font-weight:600; margin-bottom:6px;">REACT & NODE.JS</div>
+          <h4>Mon Premier SaaS</h4>
+          <p>Solution SaaS complète combinant une interface React moderne et un backend Node.js.</p>
+        </div>
+        <a href="https://github.com/Sokka04/my-first-saas" target="_blank" rel="noopener" class="btn-link-action ghost" style="justify-content:center;">Code Source GitHub ↗</a>
+      </div>
+
+      <div class="shelf-card">
+        <div>
+          <div class="mono" style="font-size:11.5px; color:var(--accent-bright); font-weight:600; margin-bottom:6px;">DESKTOP // ELECTRON & TS</div>
+          <h4>Apps Desktop Multi-plateformes</h4>
+          <p>Développement d'applications bureautiques avec Electron et TypeScript.</p>
+        </div>
+        <a href="https://github.com/Sokka04" target="_blank" rel="noopener" class="btn-link-action ghost" style="justify-content:center;">Profil GitHub ↗</a>
+      </div>
+    </div>
   </section>
 
-  <!-- 8. GET IN TOUCH (CONTACT) -->
-  <section class="section-contact" id="contact">
-    <div class="wrap">
-      <h2 class="contact-title">Démarrons une collaboration</h2>
-      <p class="contact-sub">
-        À la recherche d'un profil alliant rigueur des infrastructures réseaux et compétences en développement web ? Je suis disponible dès le 01 novembre 2026.
+  <!-- 7. CONTACT (contact.sh) -->
+  <section id="contact" class="wrap" style="border-bottom:none;">
+    <div class="eyebrow">./contact.sh --connect</div>
+    <div class="contact-box">
+      <h2>Contactez-moi</h2>
+      <p>
+        Ouvert aux opportunités (stage, alternance, missions freelance) dès le <strong>01/11/2026</strong> ou pour échanger autour des infrastructures réseaux et du développement web.
       </p>
 
       <div class="contact-btns">
-        <a href="https://wa.me/22870693550" target="_blank" rel="noopener" class="btn-magnetic wa">
-          <span>Discuter sur WhatsApp (+228 70 69 35 50)</span>
+        <a href="https://wa.me/22870693550" target="_blank" rel="noopener" class="btn-pwsh-cv">
+          <span>WhatsApp (+228 70 69 35 50)</span>
           <span aria-hidden="true">↗</span>
         </a>
-        <a href="mailto:Saramba.yoh4nn@outlook.com" class="btn-magnetic mail">
-          <span>Envoyer un email</span>
+        <a href="mailto:Saramba.yoh4nn@outlook.com" class="btn-pwsh-primary">
+          <span>Saramba.yoh4nn@outlook.com</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
 
-      <div class="contact-meta-row">
-        <div>EMAIL : <a href="mailto:Saramba.yoh4nn@outlook.com">Saramba.yoh4nn@outlook.com</a></div>
-        <div>GITHUB : <a href="https://github.com/Sokka04" target="_blank" rel="noopener">github.com/Sokka04</a></div>
-        <div>TÉLÉPHONE : <a href="tel:+22870693550">+228 70 69 35 50</a></div>
+      <div class="contact-links">
+        <a href="mailto:Saramba.yoh4nn@outlook.com">Email</a>
+        <a href="https://github.com/Sokka04" target="_blank" rel="noopener">GitHub (@Sokka04)</a>
+        <a href="https://wa.me/22870693550" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="CV_Yohann_Saramba.pdf" download="CV_Yohann_Saramba.pdf">Télécharger mon CV</a>
       </div>
     </div>
   </section>
@@ -1526,20 +1499,20 @@
 </main>
 
 <footer>
-  <div class="wrap" style="width:100%; display:flex; justify-content:space-between; align-items:center;">
-    <div>© 2026 Yohann Saramba (Sokka04) · Tous droits réservés</div>
-    <div>Hébergé sur GitHub Pages · Code natif 60 FPS</div>
-  </div>
+  © 2026 YAWO Saramba Yohann (Sokka04) — Ingénieur Réseaux & Sécurité · Développeur Web.
 </footer>
 
-<!-- ---------- JAVASCRIPT MOTION & INTERACTIVITÉ ---------- -->
 <script>
   // ==========================================
-  // 1. INTRO SCRAMBLE EFFECT ("SOKKA04" -> "YOHANN")
+  // 1. SÉQUENCE D'INTRO LENTE EN 3 TEMPS :
+  //    SOKKA04 -> PORTEFOLIO -> YOHANN
   // ==========================================
   const introOverlay = document.getElementById('intro-overlay');
   const introScrambleWord = document.getElementById('intro-scramble-word');
-  const heroTitleWord = document.getElementById('hero-title-word');
+  const introCmdText = document.getElementById('intro-cmd-text');
+  const step1 = document.getElementById('step-1');
+  const step2 = document.getElementById('step-2');
+  const step3 = document.getElementById('step-3');
   const chars = '!<>-_\\/[]{}—=+*^?#________';
 
   function scrambleWord(el, fromWord, toWord, duration, callback) {
@@ -1547,7 +1520,6 @@
     function update(now) {
       const elapsed = now - startTime;
       const progress = Math.min(1, elapsed / duration);
-      
       let result = '';
       const len = Math.max(fromWord.length, toWord.length);
       const splitIdx = Math.floor(progress * len);
@@ -1555,7 +1527,7 @@
       for (let i = 0; i < len; i++) {
         if (i < splitIdx) {
           result += toWord[i] || '';
-        } else if (Math.random() < 0.6) {
+        } else if (Math.random() < 0.55) {
           result += chars[Math.floor(Math.random() * chars.length)];
         } else {
           result += fromWord[i] || chars[Math.floor(Math.random() * chars.length)];
@@ -1574,24 +1546,29 @@
   }
 
   // ==========================================
-  // 2. MOTEUR DE MICRO-PIXELS HAUTE DENSITÉ (UINT32 BUFFER 60 FPS)
+  // 2. MOTEUR DE MICRO-PIXELS À ASSEMBLAGE LENT (5,2 SECONDES)
   // ==========================================
   const canvas = document.getElementById('mosaic-canvas');
   const ctx = canvas.getContext('2d');
+  const pwshStatus = document.getElementById('pwsh-status');
+
+  const ASSEMBLY_DURATION = 5200; // 5,2 secondes complètes pour bien voir les pixels former la photo
 
   let pCount = 0;
   let p_ox = new Float32Array(0);
   let p_oy = new Float32Array(0);
+  let p_sx = new Float32Array(0);
+  let p_sy = new Float32Array(0);
   let p_x = new Float32Array(0);
   let p_y = new Float32Array(0);
   let p_vx = new Float32Array(0);
   let p_vy = new Float32Array(0);
+  let p_delay = new Float32Array(0);
   let p_col = new Uint32Array(0);
 
   let frameImgData = null;
   let buf32 = null;
 
-  // Fallback sub-tiles pour protocole file:// local
   let fallbackTiles = [];
   let isFallbackMode = false;
   let bustDims = { w: 0, h: 0, x: 0, y: 0 };
@@ -1605,7 +1582,7 @@
   const portraitImg = new Image();
   portraitImg.src = 'portrait.png';
 
-  function scatterParticlesForAssembly() {
+  function prepareScatterPositions() {
     const cw = canvas.width;
     const ch = canvas.height;
     const cx = cw / 2;
@@ -1616,23 +1593,27 @@
       for (let i = 0; i < fallbackTiles.length; i++) {
         const t = fallbackTiles[i];
         const angle = Math.random() * Math.PI * 2;
-        const dist = 220 + Math.random() * Math.max(cw, ch) * 0.85;
-        t.x = cx + Math.cos(angle) * dist;
-        t.y = cy + Math.sin(angle) * dist;
-        t.vx = (Math.random() - 0.5) * 18;
-        t.vy = (Math.random() - 0.5) * 18;
+        const dist = 240 + Math.random() * Math.max(cw, ch) * 0.85;
+        t.sx = cx + Math.cos(angle) * dist;
+        t.sy = cy + Math.sin(angle) * dist;
+        t.x = t.sx;
+        t.y = t.sy;
+        t.delay = Math.random() * 0.42;
       }
       return;
     }
 
     for (let i = 0; i < pCount; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const dist = 180 + Math.random() * Math.max(cw, ch) * 0.9;
-      p_x[i] = cx + Math.cos(angle) * dist;
-      p_y[i] = cy + Math.sin(angle) * dist;
-      // Vitesse tangentielle pour un effet de tourbillon cinétique à l'assemblage
-      p_vx[i] = -Math.sin(angle) * 12 + (Math.random() - 0.5) * 10;
-      p_vy[i] = Math.cos(angle) * 12 + (Math.random() - 0.5) * 10;
+      const dist = 200 + Math.random() * Math.max(cw, ch) * 0.9;
+      p_sx[i] = cx + Math.cos(angle) * dist;
+      p_sy[i] = cy + Math.sin(angle) * dist;
+      p_x[i] = p_sx[i];
+      p_y[i] = p_sy[i];
+      p_vx[i] = 0;
+      p_vy[i] = 0;
+      // Délai échelonné (les pixels arrivent par vagues progressives sur 5,2s)
+      p_delay[i] = Math.random() * 0.45;
     }
   }
 
@@ -1645,13 +1626,12 @@
     if (!portraitImg.complete || portraitImg.naturalWidth === 0) return;
 
     const aspect = portraitImg.naturalHeight / portraitImg.naturalWidth;
-    const bustHeight = Math.floor(Math.min(ch * 0.88, 690));
+    const bustHeight = Math.floor(Math.min(ch * 0.85, 670));
     const bustWidth = Math.floor(bustHeight / aspect);
     const startX = Math.floor((cw - bustWidth) / 2);
-    const startY = Math.floor((ch - bustHeight) / 2 - 8);
+    const startY = Math.floor((ch - bustHeight) / 2 - 6);
     bustDims = { w: bustWidth, h: bustHeight, x: startX, y: startY };
 
-    // Échantillonnage à la résolution exacte du buste (blocs 2x2 px = ~110 000 micro-pixels)
     const offCanvas = document.createElement('canvas');
     const offCtx = offCanvas.getContext('2d');
     offCanvas.width = bustWidth;
@@ -1668,8 +1648,8 @@
     if (isFallbackMode || !imgData) {
       isFallbackMode = true;
       fallbackTiles = [];
-      const cols = 56;
-      const rows = 64;
+      const cols = 60;
+      const rows = 68;
       const sw = portraitImg.naturalWidth / cols;
       const sh = portraitImg.naturalHeight / rows;
       const dw = bustWidth / cols;
@@ -1680,20 +1660,20 @@
           const ox = startX + c * dw;
           const oy = startY + r * dh;
           fallbackTiles.push({
-            sx: c * sw, sy: r * sh, sw, sh,
-            ox, oy, x: ox, y: oy, vx: 0, vy: 0,
+            sx_img: c * sw, sy_img: r * sh, sw, sh,
+            ox, oy, sx: ox, sy: oy, x: ox, y: oy, vx: 0, vy: 0, delay: 0,
             dw: dw + 0.6, dh: dh + 0.6
           });
         }
       }
-      if (shouldScatter) scatterParticlesForAssembly();
+      if (shouldScatter) prepareScatterPositions();
       return;
     }
 
     frameImgData = ctx.createImageData(cw, ch);
     buf32 = new Uint32Array(frameImgData.data.buffer);
 
-    const step = 2; // Chaque micro-pixel fait 2x2 px -> résolution photographique ultra-nette
+    const step = 2; // Micro-pixels de 2x2 px (~110 000 pixels)
     const maxParticles = Math.ceil(bustWidth / step) * Math.ceil(bustHeight / step);
 
     const tempOx = new Float32Array(maxParticles);
@@ -1709,7 +1689,6 @@
           const r = imgData[idx];
           const g = imgData[idx + 1];
           const b = imgData[idx + 2];
-          // Format Uint32 ABGR (little-endian)
           tempCol[count] = (255 << 24) | (b << 16) | (g << 8) | r;
           tempOx[count] = startX + x;
           tempOy[count] = startY + y;
@@ -1722,10 +1701,13 @@
     p_ox = tempOx.subarray(0, count);
     p_oy = tempOy.subarray(0, count);
     p_col = tempCol.subarray(0, count);
+    p_sx = new Float32Array(count);
+    p_sy = new Float32Array(count);
     p_x = new Float32Array(count);
     p_y = new Float32Array(count);
     p_vx = new Float32Array(count);
     p_vy = new Float32Array(count);
+    p_delay = new Float32Array(count);
 
     for (let i = 0; i < count; i++) {
       p_x[i] = p_ox[i];
@@ -1733,7 +1715,19 @@
     }
 
     if (shouldScatter) {
-      scatterParticlesForAssembly();
+      prepareScatterPositions();
+    }
+  }
+
+  function updatePwshStatus(progress) {
+    if (!pwshStatus) return;
+    const pct = Math.min(100, Math.floor(progress * 100));
+    const filled = Math.floor(pct / 10);
+    const bar = '█'.repeat(filled) + '░'.repeat(10 - filled);
+    if (pct < 100) {
+      pwshStatus.textContent = `[${bar}] ${pct}% · Assemblage de ${pCount || 110400} micro-pixels...`;
+    } else {
+      pwshStatus.textContent = `[██████████] 100% READY · Portrait actif`;
     }
   }
 
@@ -1753,13 +1747,13 @@
     const mx = mouse.x;
     const my = mouse.y;
 
-    // Rappel progressif : doux au début pour bien voir les pixels s'amasser (~1.6s), puis verrouillage net
-    const elapsedAssembly = performance.now() - assemblyStartTime;
-    const isAssembling = elapsedAssembly < 1650;
-    const springK = isAssembling ? (0.025 + 0.085 * (elapsedAssembly / 1650)) : 0.14;
-    const damping = isAssembling ? 0.84 : 0.75;
+    const elapsed = performance.now() - assemblyStartTime;
+    const globalProgress = Math.min(1, elapsed / ASSEMBLY_DURATION);
+    const isAssembling = globalProgress < 1;
 
-    // Mode repli file:// local (assemblage de tuiles)
+    updatePwshStatus(globalProgress);
+
+    // Mode repli file:// local
     if (isFallbackMode) {
       ctx.clearRect(0, 0, cw, ch);
       for (let i = 0; i < fallbackTiles.length; i++) {
@@ -1767,30 +1761,37 @@
         let tx = t.ox;
         let ty = t.oy - scrollOffset;
 
-        if (mActive) {
-          const dx = t.x - mx;
-          const dy = t.y - my;
-          const dSq = dx * dx + dy * dy;
-          if (dSq < repelRadiusSq && dSq > 0) {
-            const d = Math.sqrt(dSq);
-            const wave = Math.sin((d / repelRadius) * Math.PI) * 1.8;
-            t.vx += (dx / d) * wave;
-            t.vy += (dy / d) * wave;
+        if (isAssembling) {
+          const u = Math.max(0, Math.min(1, (globalProgress - t.delay) / (1 - t.delay)));
+          const ease = 1 - Math.pow(1 - u, 3);
+          const swirl = (1 - ease) * Math.sin(u * Math.PI * 2) * 45;
+          t.x = t.sx + (tx - t.sx) * ease + swirl;
+          t.y = t.sy + (ty - t.sy) * ease - swirl;
+        } else {
+          if (mActive) {
+            const dx = t.x - mx;
+            const dy = t.y - my;
+            const dSq = dx * dx + dy * dy;
+            if (dSq < repelRadiusSq && dSq > 1) {
+              const d = Math.sqrt(dSq);
+              const wave = Math.sin((d / repelRadius) * Math.PI) * 1.6;
+              t.vx += (dx / d) * wave;
+              t.vy += (dy / d) * wave;
+            }
           }
+          t.vx = (t.vx + (tx - t.x) * 0.14) * 0.75;
+          t.vy = (t.vy + (ty - t.y) * 0.14) * 0.75;
+          t.x += t.vx;
+          t.y += t.vy;
         }
 
-        t.vx = (t.vx + (tx - t.x) * springK) * damping;
-        t.vy = (t.vy + (ty - t.y) * springK) * damping;
-        t.x += t.vx;
-        t.y += t.vy;
-
-        ctx.drawImage(portraitImg, t.sx, t.sy, t.sw, t.sh, t.x, t.y, t.dw, t.dh);
+        ctx.drawImage(portraitImg, t.sx_img, t.sy_img, t.sw, t.sh, t.x, t.y, t.dw, t.dh);
       }
       requestAnimationFrame(animateMosaic);
       return;
     }
 
-    // Mode Uint32Buffer Ultra-Haute Densité (110 000+ micro-pixels à 60 FPS)
+    // Mode Uint32Buffer Ultra-Haute Densité (110 000+ micro-pixels)
     buf32.fill(0);
     const halfCw = cw * 0.5;
 
@@ -1804,32 +1805,51 @@
         ty += Math.sin(angle) * (scatterFactor * 130);
       }
 
-      let x = p_x[i];
-      let y = p_y[i];
-      let vx = p_vx[i];
-      let vy = p_vy[i];
+      let x, y;
 
-      if (mActive) {
-        const dx = x - mx;
-        const dy = y - my;
-        const dSq = dx * dx + dy * dy;
-        if (dSq < repelRadiusSq && dSq > 1) {
-          const d = Math.sqrt(dSq);
-          const wave = Math.sin((d / repelRadius) * 3.14159) * 1.8;
-          vx += (dx / d) * wave;
-          vy += (dy / d) * wave;
+      if (isAssembling) {
+        // Trajectoire lente, fluide et tourbillonnante sur 5,2 secondes
+        const delay = p_delay[i];
+        const u = Math.max(0, Math.min(1, (globalProgress - delay) / (1 - delay)));
+        // Courbe ease-in-out douce pour voir les pixels voyager puis se poser délicatement
+        const ease = u < 0.5
+          ? 4 * u * u * u
+          : 1 - Math.pow(-2 * u + 2, 3) / 2;
+        const swirl = (1 - ease) * Math.sin(u * 3.14159 * 2) * 50;
+        const sx = p_sx[i];
+        const sy = p_sy[i];
+        x = sx + (tx - sx) * ease + swirl;
+        y = sy + (ty - sy) * ease - swirl * 0.7;
+        p_x[i] = x;
+        p_y[i] = y;
+      } else {
+        x = p_x[i];
+        y = p_y[i];
+        let vx = p_vx[i];
+        let vy = p_vy[i];
+
+        if (mActive) {
+          const dx = x - mx;
+          const dy = y - my;
+          const dSq = dx * dx + dy * dy;
+          if (dSq < repelRadiusSq && dSq > 1) {
+            const d = Math.sqrt(dSq);
+            const wave = Math.sin((d / repelRadius) * 3.14159) * 1.6;
+            vx += (dx / d) * wave;
+            vy += (dy / d) * wave;
+          }
         }
+
+        vx = (vx + (tx - x) * 0.15) * 0.74;
+        vy = (vy + (ty - y) * 0.15) * 0.74;
+        x += vx;
+        y += vy;
+
+        p_x[i] = x;
+        p_y[i] = y;
+        p_vx[i] = vx;
+        p_vy[i] = vy;
       }
-
-      vx = (vx + (tx - x) * springK) * damping;
-      vy = (vy + (ty - y) * springK) * damping;
-      x += vx;
-      y += vy;
-
-      p_x[i] = x;
-      p_y[i] = y;
-      p_vx[i] = vx;
-      p_vy[i] = vy;
 
       const ix = (x + 0.5) | 0;
       const iy = (y + 0.5) | 0;
@@ -1849,29 +1869,47 @@
     requestAnimationFrame(animateMosaic);
   }
 
-  // Démarrage coordonné : Intro SOKKA04 -> YOHANN puis assemblage direct des micro-pixels
-  function launchHeroExperience() {
+  function launchHeroAssembly() {
     if (introOverlay && !introOverlay.classList.contains('fade-out')) {
       introOverlay.classList.add('fade-out');
     }
-    scatterParticlesForAssembly();
+    prepareScatterPositions();
     if (!animationRunning) {
       animationRunning = true;
       animateMosaic();
     }
   }
 
+  // Enchaînement lent et lisible : SOKKA04 -> PORTEFOLIO -> YOHANN -> Ouverture + Assemblage 5,2s
   portraitImg.onload = () => {
     initMosaic(true);
+
+    // Étape 1 : SOKKA04 reste affiché 1,0s puis se transforme en PORTEFOLIO (0,9s)
     setTimeout(() => {
-      scrambleWord(introScrambleWord, 'SOKKA04', 'YOHANN', 650, () => {
-        setTimeout(launchHeroExperience, 220);
+      if (introOverlay.classList.contains('fade-out')) return;
+      if (introCmdText) introCmdText.textContent = 'Set-Alias -Name SOKKA04 -Value PORTEFOLIO';
+      if (step1) step1.classList.remove('active');
+      if (step2) step2.classList.add('active');
+
+      scrambleWord(introScrambleWord, 'SOKKA04', 'PORTEFOLIO', 900, () => {
+        // Étape 2 : PORTEFOLIO reste bien lisible 1,0s puis se transforme en YOHANN (0,9s)
+        setTimeout(() => {
+          if (introOverlay.classList.contains('fade-out')) return;
+          if (introCmdText) introCmdText.textContent = 'Resolve-Identity -Target YOHANN';
+          if (step2) step2.classList.remove('active');
+          if (step3) step3.classList.add('active');
+
+          scrambleWord(introScrambleWord, 'PORTEFOLIO', 'YOHANN', 900, () => {
+            // Étape 3 : YOHANN reste affiché 0,8s puis le rideau s'ouvre sur l'assemblage de 5,2s
+            setTimeout(launchHeroAssembly, 800);
+          });
+        }, 1000);
       });
-    }, 250);
+    }, 1000);
   };
 
   if (introOverlay) {
-    introOverlay.addEventListener('click', launchHeroExperience);
+    introOverlay.addEventListener('click', launchHeroAssembly);
   }
 
   window.addEventListener('resize', () => {
@@ -1895,66 +1933,48 @@
   });
 
   // ==========================================
-  // 3. RÉVÉLATION MOT PAR MOT AU SCROLL (BIO)
+  // 3. BIO ILLUMINÉE MOT PAR MOT AU SCROLL
   // ==========================================
   const bioElement = document.getElementById('intro-bio');
   if (bioElement) {
     const rawText = bioElement.textContent.trim();
     const words = rawText.split(/\s+/);
     bioElement.innerHTML = words.map(w => `<span class="word">${w}</span>`).join(' ');
-
     const wordSpans = bioElement.querySelectorAll('.word');
 
     function updateWordLights() {
       const rect = bioElement.getBoundingClientRect();
       const windowH = window.innerHeight;
-      const progress = Math.max(0, Math.min(1, (windowH - rect.top) / (windowH * 0.85)));
+      const progress = Math.max(0, Math.min(1, (windowH - rect.top) / (windowH * 0.8)));
       const countToLight = Math.floor(progress * wordSpans.length);
-
       wordSpans.forEach((span, i) => {
-        if (i < countToLight) {
-          span.classList.add('lit');
-        } else {
-          span.classList.remove('lit');
-        }
+        if (i < countToLight) span.classList.add('lit');
+        else span.classList.remove('lit');
       });
     }
-
     window.addEventListener('scroll', updateWordLights);
     updateWordLights();
   }
 
   // ==========================================
-  // 4. GESTION DU THÈME SOMBRE / CLAIR
-  // ==========================================
-  const themeBtn = document.getElementById('theme-btn');
-  const themeIcon = document.getElementById('theme-icon');
-  const htmlEl = document.documentElement;
-
-  function applyTheme(theme) {
-    htmlEl.setAttribute('data-theme', theme);
-    localStorage.setItem('sokka-theme-v3', theme);
-    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-  }
-
-  const savedTheme = localStorage.getItem('sokka-theme-v3') || 'dark';
-  applyTheme(savedTheme);
-
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      const current = htmlEl.getAttribute('data-theme');
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-    });
-  }
-
-  // ==========================================
-  // 5. INSPECTION DE LA TOPOLOGIE RÉSEAU
+  // 4. INSPECTION TOPOLOGIE & MENU MOBILE
   // ==========================================
   function showNodeDetails(nodeName, desc) {
     const box = document.getElementById('topo-status-box');
     if (box) {
-      box.innerHTML = `<span style="color:var(--accent); font-weight:600;">[${nodeName}]</span> : ${desc}`;
+      box.innerHTML = `<span style="color:var(--accent-bright); font-weight:700;">PS Intranet\\${nodeName}&gt;</span> ${desc}`;
     }
+  }
+
+  const menuBtn = document.getElementById('menu-btn');
+  const navLinks = document.getElementById('nav-links');
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
   }
 </script>
 
