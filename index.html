@@ -234,11 +234,37 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-bottom: 48px;
+    padding-bottom: 42px;
     overflow: hidden;
   }
 
-  /* Le canvas WebGL/2D en fond */
+  /* Vignette sombre en bas du Hero pour garantir une lisibilité parfaite sur la chemise blanche */
+  .hero-canvas-section::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 52%;
+    background: linear-gradient(
+      to top,
+      rgba(7, 9, 12, 0.98) 0%,
+      rgba(7, 9, 12, 0.85) 28%,
+      rgba(7, 9, 12, 0.35) 60%,
+      transparent 100%
+    );
+    z-index: 5;
+    pointer-events: none;
+  }
+  [data-theme="light"] .hero-canvas-section::after {
+    background: linear-gradient(
+      to top,
+      rgba(250, 249, 246, 0.98) 0%,
+      rgba(250, 249, 246, 0.85) 28%,
+      rgba(250, 249, 246, 0.35) 60%,
+      transparent 100%
+    );
+  }
+
+  /* Le canvas en fond */
   #mosaic-canvas {
     position: absolute;
     top: 0; left: 0;
@@ -247,31 +273,31 @@
     pointer-events: auto;
   }
 
-  /* Le mot géant "PORTFOLIO" devant le buste */
+  /* Le mot géant "YOHANN" devant le buste */
   .hero-giant-word-container {
     position: relative;
     z-index: 10;
     width: 100%;
     text-align: center;
     pointer-events: none;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
   .hero-giant-word {
     font-family: var(--font-heading);
-    font-size: clamp(64px, 15.5vw, 210px);
+    font-size: clamp(68px, 16.5vw, 225px);
     font-weight: 700;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
     line-height: 0.88;
     text-transform: uppercase;
-    background: var(--silver-grad);
+    background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 55%, #64748B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.85));
+    filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.95)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9));
     transition: transform 0.15s ease-out;
   }
 
-  /* Barre d'accroche en bas du hero */
+  /* Barre d'accroche en bas du hero (lisibilité renforcée) */
   .hero-bottom-bar {
     position: relative;
     z-index: 20;
@@ -285,29 +311,47 @@
     gap: 24px;
   }
   .hero-title-group h2 {
-    font-size: clamp(20px, 2.5vw, 30px);
+    font-size: clamp(21px, 2.6vw, 32px);
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    color: #FFFFFF;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95);
+  }
+  [data-theme="light"] .hero-title-group h2 {
+    color: #0F172A;
+    text-shadow: none;
   }
   .hero-title-group h2 .dim-italic {
     font-family: var(--font-sans);
-    font-weight: 300;
+    font-weight: 400;
     font-style: italic;
-    color: var(--muted);
+    color: #CBD5E1;
+  }
+  [data-theme="light"] .hero-title-group h2 .dim-italic {
+    color: #334155;
   }
   .hero-availability-tag {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-family: var(--font-mono);
-    font-size: 11.5px;
-    color: var(--emerald);
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #34D399;
+    background: rgba(7, 9, 12, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    padding: 6px 14px;
     border-radius: 20px;
-    margin-top: 6px;
+    margin-top: 4px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  }
+  [data-theme="light"] .hero-availability-tag {
+    background: rgba(255, 255, 255, 0.92);
+    color: #059669;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   }
   .hero-actions-right {
     display: flex;
@@ -317,8 +361,9 @@
   .btn-circle-down {
     width: 48px; height: 48px;
     border-radius: 50%;
-    border: 1px solid var(--line);
-    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(7, 9, 12, 0.82);
+    backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -981,9 +1026,9 @@
     <!-- Canvas 2D interactif pour la mosaïque de carreaux -->
     <canvas id="mosaic-canvas"></canvas>
 
-    <!-- Le mot géant "PORTFOLIO" devant le buste -->
+    <!-- Le mot géant "YOHANN" devant le buste -->
     <div class="hero-giant-word-container">
-      <h1 class="hero-giant-word" id="hero-title-word">PORTFOLIO</h1>
+      <h1 class="hero-giant-word" id="hero-title-word">YOHANN</h1>
     </div>
 
     <!-- Accroche et actions en bas du hero -->
@@ -1490,7 +1535,7 @@
 <!-- ---------- JAVASCRIPT MOTION & INTERACTIVITÉ ---------- -->
 <script>
   // ==========================================
-  // 1. INTRO SCRAMBLE EFFECT ("SOKKA04" -> "PORTFOLIO")
+  // 1. INTRO SCRAMBLE EFFECT ("SOKKA04" -> "YOHANN")
   // ==========================================
   const introOverlay = document.getElementById('intro-overlay');
   const introScrambleWord = document.getElementById('intro-scramble-word');
@@ -1528,126 +1573,309 @@
     requestAnimationFrame(update);
   }
 
-  // Lancement de l'intro
-  const hasSeenIntro = sessionStorage.getItem('sokka-intro');
-  if (hasSeenIntro) {
-    if (introOverlay) introOverlay.style.display = 'none';
-  } else {
-    setTimeout(() => {
-      scrambleWord(introScrambleWord, 'SOKKA04', 'PORTFOLIO', 1000, () => {
-        setTimeout(() => {
-          if (introOverlay) {
-            introOverlay.classList.add('fade-out');
-            sessionStorage.setItem('sokka-intro', 'true');
-          }
-        }, 500);
-      });
-    }, 400);
-
-    if (introOverlay) {
-      introOverlay.addEventListener('click', () => {
-        introOverlay.classList.add('fade-out');
-        sessionStorage.setItem('sokka-intro', 'true');
-      });
-    }
-  }
-
   // ==========================================
-  // 2. CANVAS MOSAÏQUE 2D DU PORTRAIT (INSPIRATION CODE & CHILL)
+  // 2. MOTEUR DE MICRO-PIXELS HAUTE DENSITÉ (UINT32 BUFFER 60 FPS)
   // ==========================================
   const canvas = document.getElementById('mosaic-canvas');
   const ctx = canvas.getContext('2d');
-  let particles = [];
-  let mouse = { x: -1000, y: -1000, radius: 55, active: false }; // Rayon réduit pour une interaction fine
-  let scrollY = 0;
-  let isCanvasVisible = true;
+
+  let pCount = 0;
+  let p_ox = new Float32Array(0);
+  let p_oy = new Float32Array(0);
+  let p_x = new Float32Array(0);
+  let p_y = new Float32Array(0);
+  let p_vx = new Float32Array(0);
+  let p_vy = new Float32Array(0);
+  let p_col = new Uint32Array(0);
+
+  let frameImgData = null;
+  let buf32 = null;
+
+  // Fallback sub-tiles pour protocole file:// local
+  let fallbackTiles = [];
   let isFallbackMode = false;
   let bustDims = { w: 0, h: 0, x: 0, y: 0 };
+
+  let mouse = { x: -1000, y: -1000, radius: 42, active: false };
+  let scrollY = 0;
+  let isCanvasVisible = true;
+  let animationRunning = false;
+  let assemblyStartTime = 0;
 
   const portraitImg = new Image();
   portraitImg.src = 'portrait.png';
 
-  function initMosaic() {
-    canvas.width = canvas.parentElement.offsetWidth;
-    canvas.height = canvas.parentElement.offsetHeight;
+  function scatterParticlesForAssembly() {
+    const cw = canvas.width;
+    const ch = canvas.height;
+    const cx = cw / 2;
+    const cy = ch / 2;
+    assemblyStartTime = performance.now();
+
+    if (isFallbackMode) {
+      for (let i = 0; i < fallbackTiles.length; i++) {
+        const t = fallbackTiles[i];
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 220 + Math.random() * Math.max(cw, ch) * 0.85;
+        t.x = cx + Math.cos(angle) * dist;
+        t.y = cy + Math.sin(angle) * dist;
+        t.vx = (Math.random() - 0.5) * 18;
+        t.vy = (Math.random() - 0.5) * 18;
+      }
+      return;
+    }
+
+    for (let i = 0; i < pCount; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 180 + Math.random() * Math.max(cw, ch) * 0.9;
+      p_x[i] = cx + Math.cos(angle) * dist;
+      p_y[i] = cy + Math.sin(angle) * dist;
+      // Vitesse tangentielle pour un effet de tourbillon cinétique à l'assemblage
+      p_vx[i] = -Math.sin(angle) * 12 + (Math.random() - 0.5) * 10;
+      p_vy[i] = Math.cos(angle) * 12 + (Math.random() - 0.5) * 10;
+    }
+  }
+
+  function initMosaic(shouldScatter = true) {
+    const cw = canvas.parentElement.offsetWidth;
+    const ch = canvas.parentElement.offsetHeight;
+    canvas.width = cw;
+    canvas.height = ch;
 
     if (!portraitImg.complete || portraitImg.naturalWidth === 0) return;
 
     const aspect = portraitImg.naturalHeight / portraitImg.naturalWidth;
-    const isMobile = window.innerWidth < 768;
-    // Haute densité : 360 colonnes sur desktop, 200 sur mobile (plus de 70 000 micro-carreaux ultra-détaillés)
-    const sampleWidth = isMobile ? 200 : 360;
-    const sampleHeight = Math.floor(sampleWidth * aspect);
-
-    // Dimensions d'affichage du buste au centre du hero
-    const bustHeight = Math.min(canvas.height * 0.88, 680);
-    const bustWidth = bustHeight / aspect;
-    const startX = (canvas.width - bustWidth) / 2;
-    const startY = (canvas.height - bustHeight) / 2 + 15;
+    const bustHeight = Math.floor(Math.min(ch * 0.88, 690));
+    const bustWidth = Math.floor(bustHeight / aspect);
+    const startX = Math.floor((cw - bustWidth) / 2);
+    const startY = Math.floor((ch - bustHeight) / 2 - 8);
     bustDims = { w: bustWidth, h: bustHeight, x: startX, y: startY };
 
-    // Canvas d'échantillonnage hors-écran
+    // Échantillonnage à la résolution exacte du buste (blocs 2x2 px = ~110 000 micro-pixels)
     const offCanvas = document.createElement('canvas');
     const offCtx = offCanvas.getContext('2d');
-    offCanvas.width = sampleWidth;
-    offCanvas.height = sampleHeight;
-    offCtx.drawImage(portraitImg, 0, 0, sampleWidth, sampleHeight);
+    offCanvas.width = bustWidth;
+    offCanvas.height = bustHeight;
+    offCtx.drawImage(portraitImg, 0, 0, bustWidth, bustHeight);
 
     let imgData = null;
     try {
-      imgData = offCtx.getImageData(0, 0, sampleWidth, sampleHeight).data;
+      imgData = offCtx.getImageData(0, 0, bustWidth, bustHeight).data;
     } catch (err) {
       isFallbackMode = true;
     }
 
     if (isFallbackMode || !imgData) {
       isFallbackMode = true;
-      return;
-    }
+      fallbackTiles = [];
+      const cols = 56;
+      const rows = 64;
+      const sw = portraitImg.naturalWidth / cols;
+      const sh = portraitImg.naturalHeight / rows;
+      const dw = bustWidth / cols;
+      const dh = bustHeight / rows;
 
-    particles = [];
-    const stepX = bustWidth / sampleWidth;
-    const stepY = bustHeight / sampleHeight;
-    // Taille continue des micro-carreaux pour un portrait parfaitement net sans grille sombre
-    const tileSize = Math.max(1.3, stepX * 1.05);
-
-    for (let y = 0; y < sampleHeight; y++) {
-      for (let x = 0; x < sampleWidth; x++) {
-        const idx = (y * sampleWidth + x) * 4;
-        const alpha = imgData[idx + 3];
-
-        if (alpha > 40) {
-          const r = imgData[idx];
-          const g = imgData[idx + 1];
-          const b = imgData[idx + 2];
-
-          const origX = startX + x * stepX;
-          const origY = startY + y * stepY;
-
-          particles.push({
-            ox: origX,
-            oy: origY,
-            x: origX,
-            y: origY,
-            vx: 0,
-            vy: 0,
-            r: r,
-            g: g,
-            b: b,
-            size: tileSize
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const ox = startX + c * dw;
+          const oy = startY + r * dh;
+          fallbackTiles.push({
+            sx: c * sw, sy: r * sh, sw, sh,
+            ox, oy, x: ox, y: oy, vx: 0, vy: 0,
+            dw: dw + 0.6, dh: dh + 0.6
           });
         }
       }
+      if (shouldScatter) scatterParticlesForAssembly();
+      return;
+    }
+
+    frameImgData = ctx.createImageData(cw, ch);
+    buf32 = new Uint32Array(frameImgData.data.buffer);
+
+    const step = 2; // Chaque micro-pixel fait 2x2 px -> résolution photographique ultra-nette
+    const maxParticles = Math.ceil(bustWidth / step) * Math.ceil(bustHeight / step);
+
+    const tempOx = new Float32Array(maxParticles);
+    const tempOy = new Float32Array(maxParticles);
+    const tempCol = new Uint32Array(maxParticles);
+    let count = 0;
+
+    for (let y = 0; y < bustHeight - 1; y += step) {
+      for (let x = 0; x < bustWidth - 1; x += step) {
+        const idx = (y * bustWidth + x) * 4;
+        const a = imgData[idx + 3];
+        if (a > 40) {
+          const r = imgData[idx];
+          const g = imgData[idx + 1];
+          const b = imgData[idx + 2];
+          // Format Uint32 ABGR (little-endian)
+          tempCol[count] = (255 << 24) | (b << 16) | (g << 8) | r;
+          tempOx[count] = startX + x;
+          tempOy[count] = startY + y;
+          count++;
+        }
+      }
+    }
+
+    pCount = count;
+    p_ox = tempOx.subarray(0, count);
+    p_oy = tempOy.subarray(0, count);
+    p_col = tempCol.subarray(0, count);
+    p_x = new Float32Array(count);
+    p_y = new Float32Array(count);
+    p_vx = new Float32Array(count);
+    p_vy = new Float32Array(count);
+
+    for (let i = 0; i < count; i++) {
+      p_x[i] = p_ox[i];
+      p_y[i] = p_oy[i];
+    }
+
+    if (shouldScatter) {
+      scatterParticlesForAssembly();
+    }
+  }
+
+  function animateMosaic() {
+    if (!isCanvasVisible) {
+      requestAnimationFrame(animateMosaic);
+      return;
+    }
+
+    const cw = canvas.width;
+    const ch = canvas.height;
+    const scatterFactor = Math.min(1.8, scrollY / 320);
+    const scrollOffset = scrollY * 0.3;
+    const repelRadius = mouse.radius;
+    const repelRadiusSq = repelRadius * repelRadius;
+    const mActive = mouse.active;
+    const mx = mouse.x;
+    const my = mouse.y;
+
+    // Rappel progressif : doux au début pour bien voir les pixels s'amasser (~1.6s), puis verrouillage net
+    const elapsedAssembly = performance.now() - assemblyStartTime;
+    const isAssembling = elapsedAssembly < 1650;
+    const springK = isAssembling ? (0.025 + 0.085 * (elapsedAssembly / 1650)) : 0.14;
+    const damping = isAssembling ? 0.84 : 0.75;
+
+    // Mode repli file:// local (assemblage de tuiles)
+    if (isFallbackMode) {
+      ctx.clearRect(0, 0, cw, ch);
+      for (let i = 0; i < fallbackTiles.length; i++) {
+        const t = fallbackTiles[i];
+        let tx = t.ox;
+        let ty = t.oy - scrollOffset;
+
+        if (mActive) {
+          const dx = t.x - mx;
+          const dy = t.y - my;
+          const dSq = dx * dx + dy * dy;
+          if (dSq < repelRadiusSq && dSq > 0) {
+            const d = Math.sqrt(dSq);
+            const wave = Math.sin((d / repelRadius) * Math.PI) * 1.8;
+            t.vx += (dx / d) * wave;
+            t.vy += (dy / d) * wave;
+          }
+        }
+
+        t.vx = (t.vx + (tx - t.x) * springK) * damping;
+        t.vy = (t.vy + (ty - t.y) * springK) * damping;
+        t.x += t.vx;
+        t.y += t.vy;
+
+        ctx.drawImage(portraitImg, t.sx, t.sy, t.sw, t.sh, t.x, t.y, t.dw, t.dh);
+      }
+      requestAnimationFrame(animateMosaic);
+      return;
+    }
+
+    // Mode Uint32Buffer Ultra-Haute Densité (110 000+ micro-pixels à 60 FPS)
+    buf32.fill(0);
+    const halfCw = cw * 0.5;
+
+    for (let i = 0; i < pCount; i++) {
+      let tx = p_ox[i];
+      let ty = p_oy[i] - scrollOffset;
+
+      if (scatterFactor > 0.04) {
+        const angle = (tx - halfCw) * 0.012;
+        tx += Math.cos(angle) * (scatterFactor * 110);
+        ty += Math.sin(angle) * (scatterFactor * 130);
+      }
+
+      let x = p_x[i];
+      let y = p_y[i];
+      let vx = p_vx[i];
+      let vy = p_vy[i];
+
+      if (mActive) {
+        const dx = x - mx;
+        const dy = y - my;
+        const dSq = dx * dx + dy * dy;
+        if (dSq < repelRadiusSq && dSq > 1) {
+          const d = Math.sqrt(dSq);
+          const wave = Math.sin((d / repelRadius) * 3.14159) * 1.8;
+          vx += (dx / d) * wave;
+          vy += (dy / d) * wave;
+        }
+      }
+
+      vx = (vx + (tx - x) * springK) * damping;
+      vy = (vy + (ty - y) * springK) * damping;
+      x += vx;
+      y += vy;
+
+      p_x[i] = x;
+      p_y[i] = y;
+      p_vx[i] = vx;
+      p_vy[i] = vy;
+
+      const ix = (x + 0.5) | 0;
+      const iy = (y + 0.5) | 0;
+
+      if (ix >= 0 && ix < cw - 1 && iy >= 0 && iy < ch - 1) {
+        const c = p_col[i];
+        const row1 = iy * cw + ix;
+        const row2 = row1 + cw;
+        buf32[row1] = c;
+        buf32[row1 + 1] = c;
+        buf32[row2] = c;
+        buf32[row2 + 1] = c;
+      }
+    }
+
+    ctx.putImageData(frameImgData, 0, 0);
+    requestAnimationFrame(animateMosaic);
+  }
+
+  // Démarrage coordonné : Intro SOKKA04 -> YOHANN puis assemblage direct des micro-pixels
+  function launchHeroExperience() {
+    if (introOverlay && !introOverlay.classList.contains('fade-out')) {
+      introOverlay.classList.add('fade-out');
+    }
+    scatterParticlesForAssembly();
+    if (!animationRunning) {
+      animationRunning = true;
+      animateMosaic();
     }
   }
 
   portraitImg.onload = () => {
-    initMosaic();
-    animateMosaic();
+    initMosaic(true);
+    setTimeout(() => {
+      scrambleWord(introScrambleWord, 'SOKKA04', 'YOHANN', 650, () => {
+        setTimeout(launchHeroExperience, 220);
+      });
+    }, 250);
   };
 
+  if (introOverlay) {
+    introOverlay.addEventListener('click', launchHeroExperience);
+  }
+
   window.addEventListener('resize', () => {
-    initMosaic();
+    initMosaic(false);
   });
 
   window.addEventListener('mousemove', (e) => {
@@ -1665,86 +1893,6 @@
     scrollY = window.scrollY;
     isCanvasVisible = scrollY < window.innerHeight * 1.2;
   });
-
-  function animateMosaic() {
-    if (!isCanvasVisible) {
-      requestAnimationFrame(animateMosaic);
-      return;
-    }
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Mode repli (pour double-clic file:// local sans serveur web)
-    if (isFallbackMode) {
-      const offsetX = mouse.active ? (mouse.x - canvas.width / 2) * 0.008 : 0;
-      const offsetY = mouse.active ? (mouse.y - canvas.height / 2) * 0.008 : 0;
-      const scrollOffset = scrollY * 0.35;
-
-      ctx.save();
-      ctx.globalAlpha = Math.max(0, 1 - scrollY / 500);
-      ctx.drawImage(
-        portraitImg,
-        bustDims.x + offsetX,
-        bustDims.y + offsetY - scrollOffset,
-        bustDims.w,
-        bustDims.h
-      );
-      ctx.restore();
-
-      requestAnimationFrame(animateMosaic);
-      return;
-    }
-
-    // Mode Mosaïque Haute Définition
-    const scatterFactor = Math.min(1.8, scrollY / 300);
-    const repelRadius = 45; // Rayon très localisé
-    const repelRadiusSq = repelRadius * repelRadius;
-
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-
-      let targetX = p.ox;
-      let targetY = p.oy - (scrollY * 0.3);
-
-      if (scatterFactor > 0.05) {
-        const angle = (p.ox - canvas.width / 2) * 0.01;
-        targetX += Math.cos(angle) * (scatterFactor * 120);
-        targetY += Math.sin(angle) * (scatterFactor * 140);
-      }
-
-      // Ondulation subtile au curseur SANS trou béant (onde sinusoïdale douce)
-      if (mouse.active) {
-        const dx = p.x - mouse.x;
-        const dy = p.y - mouse.y;
-        const distSq = dx * dx + dy * dy;
-
-        if (distSq < repelRadiusSq && distSq > 0) {
-          const dist = Math.sqrt(distSq);
-          // Onde : nulle au centre exact, max à mi-distance, nulle au bord
-          const wave = Math.sin((dist / repelRadius) * Math.PI);
-          const shift = wave * 2.2; // 2 pixels max de déformation douce
-          const angle = Math.atan2(dy, dx);
-          p.vx += Math.cos(angle) * shift;
-          p.vy += Math.sin(angle) * shift;
-        }
-      }
-
-      // Rappel élastique rapide
-      p.vx += (targetX - p.x) * 0.16;
-      p.vy += (targetY - p.y) * 0.16;
-
-      p.vx *= 0.72;
-      p.vy *= 0.72;
-
-      p.x += p.vx;
-      p.y += p.vy;
-
-      ctx.fillStyle = `rgb(${p.r}, ${p.g}, ${p.b})`;
-      ctx.fillRect(p.x, p.y, p.size, p.size);
-    }
-
-    requestAnimationFrame(animateMosaic);
-  }
 
   // ==========================================
   // 3. RÉVÉLATION MOT PAR MOT AU SCROLL (BIO)
