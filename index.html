@@ -42,31 +42,31 @@
 </script>
 
 <style>
-  /* ---------- PALETTE MODE CLAIR UNIQUE (BLANC ALBÂTRE & VIOLET PWSH) ---------- */
+  /* ---------- PALETTE 100% VIOLET & BLANC (MODE CLAIR UNIQUE) ---------- */
   :root {
-    --bg: #FAF9F6;
-    --bg-alt: #F3F1EC;
+    --bg: #FFFFFF;
+    --bg-alt: #FAF8FF;
     --card: #FFFFFF;
-    --card-hover: #FCFBF9;
-    --ink: #14151A;
-    --ink-dim: #2D303E;
-    --muted: #5E6170;
-    --line: #E4E2DC;
-    --line-subtle: #ECEAE4;
+    --card-hover: #FCFaff;
+    --ink: #1E0B4B;
+    --ink-dim: #3B1C7A;
+    --muted: #65528F;
+    --line: #E8E0FF;
+    --line-subtle: #F3EEFF;
 
-    /* Accent Violet & Cobalt d'origine */
+    /* Accents 100% Violet & Blanc */
     --accent: #5B21B6;
     --accent-bright: #6E44FF;
-    --accent-cobalt: #3454D1;
-    --accent-glow: rgba(110, 68, 255, 0.16);
+    --accent-cobalt: #7C3AED;
+    --accent-glow: rgba(110, 68, 255, 0.18);
     --accent-dim: rgba(110, 68, 255, 0.07);
-    --accent-border: rgba(110, 68, 255, 0.28);
-    --accent-gradient: linear-gradient(135deg, #3454D1 0%, #6E44FF 100%);
-    --hero-word-grad: linear-gradient(180deg, #14151A 0%, #3B1D82 55%, #6E44FF 100%);
+    --accent-border: rgba(110, 68, 255, 0.30);
+    --accent-gradient: linear-gradient(135deg, #5B21B6 0%, #6E44FF 60%, #8B5CF6 100%);
+    --hero-word-grad: linear-gradient(180deg, #2E1065 0%, #5B21B6 50%, #6E44FF 100%);
 
-    --emerald: #059669;
-    --emerald-bg: rgba(5, 150, 105, 0.08);
-    --emerald-border: rgba(5, 150, 105, 0.28);
+    --emerald: #6E44FF;
+    --emerald-bg: rgba(110, 68, 255, 0.08);
+    --emerald-border: rgba(110, 68, 255, 0.32);
 
     --font-display: 'Clash Display', 'Space Grotesk', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
@@ -83,8 +83,8 @@
   body {
     background-color: var(--bg);
     background-image:
-      radial-gradient(circle at 85% 12%, rgba(110, 68, 255, 0.07) 0%, transparent 45%),
-      radial-gradient(circle at 12% 88%, rgba(52, 84, 209, 0.05) 0%, transparent 45%);
+      radial-gradient(circle at 85% 12%, rgba(110, 68, 255, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 12% 88%, rgba(124, 58, 237, 0.06) 0%, transparent 45%);
     color: var(--ink);
     font-family: var(--font-sans);
     font-size: 16px;
@@ -93,14 +93,14 @@
     overflow-x: hidden;
   }
 
-  /* Trame subtile de terminal clair en arrière-plan */
+  /* Trame subtile violette très pâle en arrière-plan */
   body::before {
     content: '';
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
     background-image:
-      linear-gradient(to right, rgba(20, 21, 26, 0.028) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(20, 21, 26, 0.028) 1px, transparent 1px);
+      linear-gradient(to right, rgba(110, 68, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(110, 68, 255, 0.03) 1px, transparent 1px);
     background-size: 48px 48px;
     pointer-events: none;
     z-index: -1;
@@ -202,7 +202,7 @@
     z-index: 500;
     display: flex;
     align-items: center;
-    background: rgba(250, 249, 246, 0.85);
+    background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--line);
@@ -331,14 +331,21 @@
     font-family: var(--font-mono);
     font-size: 12px;
     color: var(--accent-bright);
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.94);
     border: 1px solid var(--accent-border);
     padding: 6px 14px;
     border-radius: 8px;
     font-weight: 500;
+    transition: opacity 0.65s ease, transform 0.65s ease, visibility 0.65s;
+  }
+  .pwsh-render-status.hidden-status {
+    opacity: 0;
+    transform: translateY(-8px);
+    visibility: hidden;
+    pointer-events: none;
   }
 
-  /* Canvas 2D des 110 000 micro-pixels */
+  /* Canvas 2D des micro-pixels violets & blancs */
   #mosaic-canvas {
     position: absolute;
     top: 0; left: 0;
@@ -355,9 +362,9 @@
     height: 46%;
     background: linear-gradient(
       to top,
-      #FAF9F6 0%,
-      rgba(250, 249, 246, 0.94) 34%,
-      rgba(250, 249, 246, 0.45) 68%,
+      #FFFFFF 0%,
+      rgba(255, 255, 255, 0.95) 36%,
+      rgba(255, 255, 255, 0.50) 70%,
       transparent 100%
     );
     z-index: 6;
@@ -392,7 +399,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    filter: drop-shadow(0 8px 24px rgba(250, 249, 246, 0.95)) drop-shadow(0 4px 12px rgba(110, 68, 255, 0.14));
+    filter: drop-shadow(0 8px 24px rgba(255, 255, 255, 0.96)) drop-shadow(0 4px 12px rgba(110, 68, 255, 0.16));
   }
 
   /* Barre d'accroche et CTAs en bas du Hero */
@@ -418,7 +425,7 @@
     font-family: var(--font-sans);
     font-weight: 400;
     font-style: italic;
-    color: var(--accent-cobalt);
+    color: var(--accent-bright);
   }
   .hero-availability-tag {
     display: inline-flex;
@@ -427,12 +434,12 @@
     font-family: var(--font-mono);
     font-size: 12px;
     font-weight: 600;
-    color: var(--emerald);
+    color: var(--accent-bright);
     background: #FFFFFF;
-    border: 1px solid var(--emerald-border);
+    border: 1px solid var(--accent-border);
     padding: 6px 14px;
     border-radius: 20px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 14px rgba(110, 68, 255, 0.06);
   }
 
   .hero-actions-right {
@@ -447,35 +454,39 @@
     font-weight: 600;
     padding: 13px 22px;
     border-radius: 8px;
-    background: var(--ink);
+    background: var(--accent-gradient);
     color: #FFFFFF;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    box-shadow: 0 6px 18px var(--accent-glow);
     transition: all 0.22s ease;
   }
   .btn-pwsh-primary:hover {
-    background: var(--accent-bright);
     transform: translateY(-2px);
-    box-shadow: 0 10px 22px var(--accent-glow);
+    box-shadow: 0 10px 24px rgba(110, 68, 255, 0.34);
   }
   .btn-pwsh-cv {
     font-family: var(--font-mono);
     font-size: 13px;
     font-weight: 600;
-    padding: 13px 22px;
+    padding: 12px 22px;
     border-radius: 8px;
-    background: var(--accent-gradient);
-    color: #FFFFFF;
+    background: #FFFFFF;
+    border: 1.5px solid var(--accent-bright);
+    color: var(--accent-bright);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    box-shadow: 0 6px 18px var(--accent-glow);
+    box-shadow: 0 4px 14px rgba(110, 68, 255, 0.08);
     transition: all 0.22s ease;
   }
   .btn-pwsh-cv:hover {
+    background: var(--accent-dim);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(110, 68, 255, 0.32);
+    box-shadow: 0 8px 20px rgba(110, 68, 255, 0.18);
   }
 
   /* ---------- SECTIONS COMMUNES (STYLE PWSH) ---------- */
@@ -834,7 +845,7 @@
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--line);
-    background: #FAF9F6;
+    background: #FAF8FF;
   }
   .pwsh-titlebar {
     background: var(--bg-alt);
@@ -848,7 +859,7 @@
     border-bottom: 1px solid var(--line);
   }
   .pwsh-dots { display: flex; gap: 6px; }
-  .pwsh-dot { width: 9px; height: 9px; border-radius: 50%; background: #D1CFC9; }
+  .pwsh-dot { width: 9px; height: 9px; border-radius: 50%; background: #D8CCFF; }
   .pwsh-body {
     padding: 24px;
     font-family: var(--font-mono);
@@ -920,7 +931,7 @@
     padding: 64px 40px;
     border-radius: 18px;
     text-align: center;
-    box-shadow: 0 16px 40px rgba(20, 21, 26, 0.04);
+    box-shadow: 0 16px 40px rgba(110, 68, 255, 0.05);
   }
   .contact-box h2 {
     font-family: var(--font-display);
@@ -970,27 +981,254 @@
     text-align: center;
   }
 
+  /* ---------- RESPONSIVE MOBILE & TABLETTE (AUDIT COMPLET) ---------- */
   @media (max-width: 860px) {
+    :root {
+      --nav-h: 64px;
+      --section-pad: 68px;
+    }
+    .wrap {
+      padding: 0 20px;
+    }
+    nav {
+      padding: 0 20px;
+    }
+
+    /* Intro Overlay Mobile */
+    .intro-pwsh-bar {
+      font-size: 11.5px;
+      padding: 5px 12px;
+      margin-bottom: 18px;
+      max-width: 94vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .intro-word {
+      font-size: clamp(32px, 10.2vw, 72px);
+    }
+    .intro-steps-dots {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      font-size: 11px;
+      margin-top: 22px;
+    }
+
+    /* Navigation Mobile */
     .nav-links, .btn-nav-pwsh { display: none; }
-    .menu-btn { display: block; }
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-bright);
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 7px;
+    }
     .nav-links.open {
       display: flex;
       position: fixed;
       top: var(--nav-h); left: 0;
       width: 100%; height: calc(100vh - var(--nav-h));
-      background: var(--bg);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(18px);
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 18px;
-      gap: 28px;
+      font-size: 17px;
+      gap: 24px;
+      padding: 24px;
+      z-index: 600;
     }
+    .nav-links.open a {
+      padding: 10px 24px;
+      border-radius: 10px;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Hero Mobile : Zéro chevauchement + Boutons symétriques */
+    .hero-canvas-section {
+      padding-top: calc(var(--nav-h) + 12px);
+      padding-bottom: 24px;
+      min-height: 100svh;
+    }
+    .hero-canvas-section::after {
+      height: 52%;
+      background: linear-gradient(
+        to top,
+        #FFFFFF 0%,
+        rgba(255, 255, 255, 0.96) 44%,
+        rgba(255, 255, 255, 0.55) 76%,
+        transparent 100%
+      );
+    }
+    .hero-pwsh-top {
+      padding: 0 16px;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .pwsh-prompt-pill {
+      font-size: 11px;
+      padding: 6px 12px;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .pwsh-render-status {
+      font-size: 11px;
+      padding: 5px 12px;
+    }
+    .hero-giant-word {
+      font-size: clamp(50px, 16.5vw, 110px);
+    }
+    .hero-bottom-bar {
+      padding: 0 20px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+    }
+    .hero-title-group {
+      text-align: center;
+    }
+    .hero-title-group h2 {
+      font-size: clamp(18px, 4.8vw, 24px);
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .hero-availability-tag {
+      font-size: 11px;
+      padding: 6px 12px;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+    }
+    .hero-actions-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+    }
+    .btn-pwsh-primary, .btn-pwsh-cv {
+      width: 100%;
+      padding: 12px 10px;
+      font-size: 12px;
+    }
+
+    /* Sections & Titres Mobile */
+    .section-heading {
+      font-size: clamp(24px, 6.5vw, 34px);
+      margin-bottom: 28px;
+    }
+    .eyebrow {
+      font-size: 11px;
+      padding: 4px 10px;
+    }
+
+    /* Grilles 1 colonne sur Mobile */
     .intro-grid, .bilan-grid, .project-item, .project-item.reverse, .shelf-grid {
       grid-template-columns: 1fr;
+      gap: 22px;
     }
-    .service-row { grid-template-columns: 45px 1fr 30px; }
-    .service-desc { display: none; }
-    .hero-bottom-bar { flex-direction: column; align-items: flex-start; }
+    .intro-bio-card, .bilan-card, .shelf-card {
+      padding: 22px 20px;
+    }
+    .intro-text-reveal {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .fact-list div.fact-row {
+      padding: 12px 16px;
+      font-size: 12px;
+      gap: 10px;
+    }
+
+    /* Section Services : Conserver la description visible sur Mobile */
+    .service-row {
+      grid-template-columns: 38px 1fr 24px;
+      row-gap: 8px;
+      column-gap: 12px;
+      padding: 22px 0;
+      align-items: baseline;
+    }
+    .service-name {
+      font-size: 18px;
+    }
+    .service-desc {
+      display: block;
+      grid-column: 2 / 4;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* Section Projets : Toujours afficher le Titre avant le Visuel sur Mobile */
+    .project-item {
+      margin-bottom: 56px;
+      gap: 24px;
+    }
+    .project-item.reverse .project-info { order: 1; }
+    .project-item.reverse .project-visual { order: 2; }
+    .project-specs {
+      padding: 16px;
+    }
+    .spec-row {
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+    .spec-label {
+      width: auto;
+      font-size: 11px;
+    }
+    .project-visual {
+      padding: 14px;
+    }
+    .pwsh-body {
+      padding: 16px;
+      font-size: 11.5px;
+    }
+
+    /* Section Contact Mobile */
+    .contact-box {
+      padding: 36px 20px;
+    }
+    .contact-box p {
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+    .contact-btns {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .contact-btns a {
+      width: 100%;
+    }
+    .contact-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      font-size: 12.5px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .hide-xs { display: none; }
+  }
+  @media (max-width: 400px) {
+    .hero-actions-right {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1056,8 +1294,8 @@
     <!-- Barre de commande PowerShell supérieure -->
     <div class="hero-pwsh-top">
       <div class="pwsh-prompt-pill">
-        <span class="ps-dir">PS C:\Users\Sokka04\Portfolio&gt;</span>
-        <span class="ps-cmd">Get-Engineer</span> -Name "Yohann Saramba"
+        <span class="ps-dir">PS C:\Users\Sokka04<span class="hide-xs">\Portfolio</span>&gt;</span>
+        <span class="ps-cmd">Get-Engineer</span> -Name "Yohann<span class="hide-xs"> Saramba</span>"
       </div>
       <div class="pwsh-render-status" id="pwsh-status">
         [░░░░░░░░░░] 0% · Assemblage des pixels...
@@ -1331,50 +1569,50 @@
       </div>
 
       <div class="project-visual">
-        <div class="mono" style="font-size:11.5px; color:var(--accent-cobalt); font-weight:600; margin-bottom:10px; display:flex; justify-content:space-between;">
-          <span>// TOPOLOGIE INTRANET INTERACTIVE (CLIQUEZ SUR UN NŒUD)</span>
-          <span style="color:var(--emerald);">● FLUX ACTIFS</span>
+        <div class="mono" style="font-size:11px; color:var(--accent-cobalt); font-weight:600; margin-bottom:10px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px;">
+          <span>// TOPOLOGIE INTRANET INTERACTIVE</span>
+          <span style="color:var(--accent-bright);">● FLUX ACTIFS</span>
         </div>
 
-        <svg class="topo-svg" viewBox="0 0 760 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="380" y1="36" x2="380" y2="96" stroke="#E4E2DC" stroke-width="3" />
-          <line x1="380" y1="96" x2="140" y2="170" stroke="#E4E2DC" stroke-width="2.5" />
-          <line x1="380" y1="96" x2="380" y2="170" stroke="#E4E2DC" stroke-width="2.5" />
-          <line x1="380" y1="96" x2="620" y2="170" stroke="#E4E2DC" stroke-width="2.5" />
+        <svg class="topo-svg" viewBox="0 0 540 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="270" y1="38" x2="270" y2="100" stroke="#E8E0FF" stroke-width="3" />
+          <line x1="270" y1="100" x2="92" y2="180" stroke="#E8E0FF" stroke-width="2.5" />
+          <line x1="270" y1="100" x2="270" y2="180" stroke="#E8E0FF" stroke-width="2.5" />
+          <line x1="270" y1="100" x2="448" y2="180" stroke="#E8E0FF" stroke-width="2.5" />
 
-          <line x1="380" y1="36" x2="380" y2="96" stroke="#6E44FF" stroke-width="2.5" class="packet-flow" />
-          <line x1="380" y1="96" x2="140" y2="170" stroke="#6E44FF" stroke-width="2" class="packet-flow" />
-          <line x1="380" y1="96" x2="380" y2="170" stroke="#3454D1" stroke-width="2" class="packet-flow" />
-          <line x1="380" y1="96" x2="620" y2="170" stroke="#059669" stroke-width="2" class="packet-flow" />
+          <line x1="270" y1="38" x2="270" y2="100" stroke="#6E44FF" stroke-width="2.5" class="packet-flow" />
+          <line x1="270" y1="100" x2="92" y2="180" stroke="#6E44FF" stroke-width="2" class="packet-flow" />
+          <line x1="270" y1="100" x2="270" y2="180" stroke="#7C3AED" stroke-width="2" class="packet-flow" />
+          <line x1="270" y1="100" x2="448" y2="180" stroke="#8B5CF6" stroke-width="2" class="packet-flow" />
 
-          <g class="topo-node" transform="translate(380, 36)" onclick="showNodeDetails('Routeur Principal', 'Routage Inter-VLAN, passerelle interne et règles ACL')">
-            <rect x="-68" y="-20" width="136" height="40" rx="8" fill="#FFFFFF" stroke="#6E44FF" stroke-width="2" />
-            <text x="0" y="-2" fill="#14151A" font-family="IBM Plex Mono" font-size="11" font-weight="700" text-anchor="middle">ROUTEUR CORE</text>
-            <text x="0" y="11" fill="#6E44FF" font-family="IBM Plex Mono" font-size="8.5" text-anchor="middle">192.168.1.1 / GW</text>
+          <g class="topo-node" transform="translate(270, 38)" onclick="showNodeDetails('Routeur Principal', 'Routage Inter-VLAN, passerelle interne et règles ACL')">
+            <rect x="-80" y="-22" width="160" height="44" rx="8" fill="#FFFFFF" stroke="#6E44FF" stroke-width="2" />
+            <text x="0" y="-3" fill="#1E0B4B" font-family="IBM Plex Mono" font-size="11.5" font-weight="700" text-anchor="middle">ROUTEUR CORE</text>
+            <text x="0" y="12" fill="#6E44FF" font-family="IBM Plex Mono" font-size="9.5" text-anchor="middle">192.168.1.1 / GW</text>
           </g>
 
-          <g class="topo-node" transform="translate(380, 96)" onclick="showNodeDetails('Switch L2/L3', ' Liens 802.1Q Trunk et Spanning Tree Protocol (STP)')">
-            <rect x="-75" y="-16" width="150" height="34" rx="6" fill="#FFFFFF" stroke="#3454D1" stroke-width="1.8" />
-            <text x="0" y="0" fill="#14151A" font-family="IBM Plex Mono" font-size="10.5" font-weight="600" text-anchor="middle">SWITCH L2/L3</text>
-            <text x="0" y="12" fill="#5E6170" font-family="IBM Plex Mono" font-size="8.5" text-anchor="middle">802.1Q TRUNK</text>
+          <g class="topo-node" transform="translate(270, 100)" onclick="showNodeDetails('Switch L2/L3', 'Liens 802.1Q Trunk et Spanning Tree Protocol (STP)')">
+            <rect x="-85" y="-18" width="170" height="38" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.8" />
+            <text x="0" y="-1" fill="#1E0B4B" font-family="IBM Plex Mono" font-size="11" font-weight="600" text-anchor="middle">SWITCH L2/L3</text>
+            <text x="0" y="13" fill="#65528F" font-family="IBM Plex Mono" font-size="9" text-anchor="middle">802.1Q TRUNK</text>
           </g>
 
-          <g class="topo-node" transform="translate(140, 170)" onclick="showNodeDetails('VLAN 10 · Admin', '10.10.10.0/24 — Administration système & supervision')">
-            <rect x="-62" y="-20" width="124" height="40" rx="8" fill="#FFFFFF" stroke="#6E44FF" stroke-width="1.6" />
-            <text x="0" y="-3" fill="#14151A" font-family="IBM Plex Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 10 · ADMIN</text>
-            <text x="0" y="10" fill="#5E6170" font-family="IBM Plex Mono" font-size="8" text-anchor="middle">10.10.10.0/24</text>
+          <g class="topo-node" transform="translate(92, 180)" onclick="showNodeDetails('VLAN 10 · Admin', '10.10.10.0/24 — Administration système & supervision')">
+            <rect x="-78" y="-22" width="156" height="44" rx="8" fill="#FFFFFF" stroke="#6E44FF" stroke-width="1.6" />
+            <text x="0" y="-3" fill="#1E0B4B" font-family="IBM Plex Mono" font-size="10.5" font-weight="600" text-anchor="middle">VLAN 10 · ADMIN</text>
+            <text x="0" y="11" fill="#65528F" font-family="IBM Plex Mono" font-size="9" text-anchor="middle">10.10.10.0/24</text>
           </g>
 
-          <g class="topo-node" transform="translate(380, 170)" onclick="showNodeDetails('VLAN 20 · Services', '10.10.20.0/24 — Postes collaborateurs cloisonnés')">
-            <rect x="-62" y="-20" width="124" height="40" rx="8" fill="#FFFFFF" stroke="#3454D1" stroke-width="1.6" />
-            <text x="0" y="-3" fill="#14151A" font-family="IBM Plex Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 20 · STAFF</text>
-            <text x="0" y="10" fill="#5E6170" font-family="IBM Plex Mono" font-size="8" text-anchor="middle">10.10.20.0/24</text>
+          <g class="topo-node" transform="translate(270, 180)" onclick="showNodeDetails('VLAN 20 · Services', '10.10.20.0/24 — Postes collaborateurs cloisonnés')">
+            <rect x="-78" y="-22" width="156" height="44" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.6" />
+            <text x="0" y="-3" fill="#1E0B4B" font-family="IBM Plex Mono" font-size="10.5" font-weight="600" text-anchor="middle">VLAN 20 · STAFF</text>
+            <text x="0" y="11" fill="#65528F" font-family="IBM Plex Mono" font-size="9" text-anchor="middle">10.10.20.0/24</text>
           </g>
 
-          <g class="topo-node" transform="translate(620, 170)" onclick="showNodeDetails('VLAN 30 · Serveurs', '10.10.30.0/24 — Annuaire interne & ressources partagées')">
-            <rect x="-62" y="-20" width="124" height="40" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.6" />
-            <text x="0" y="-3" fill="#14151A" font-family="IBM Plex Mono" font-size="10" font-weight="600" text-anchor="middle">VLAN 30 · SERVEURS</text>
-            <text x="0" y="10" fill="#5E6170" font-family="IBM Plex Mono" font-size="8" text-anchor="middle">10.10.30.0/24</text>
+          <g class="topo-node" transform="translate(448, 180)" onclick="showNodeDetails('VLAN 30 · Serveurs', '10.10.30.0/24 — Annuaire interne & ressources partagées')">
+            <rect x="-78" y="-22" width="156" height="44" rx="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.6" />
+            <text x="0" y="-3" fill="#1E0B4B" font-family="IBM Plex Mono" font-size="10.5" font-weight="600" text-anchor="middle">VLAN 30 · SERVEURS</text>
+            <text x="0" y="11" fill="#65528F" font-family="IBM Plex Mono" font-size="9" text-anchor="middle">10.10.30.0/24</text>
           </g>
         </svg>
 
@@ -1545,8 +1783,8 @@
     requestAnimationFrame(update);
   }
 
-   // ==========================================
-  // 2. MOTEUR PIXEL-ART VIOLET / INDIGO À ASSEMBLAGE LENT (5,2 SECONDES)
+  // ==========================================
+  // 2. MOTEUR PIXEL-ART 100% VIOLET & BLANC + ÉTOILES AU SCROLL (5,2 SECONDES)
   // ==========================================
   const canvas = document.getElementById('mosaic-canvas');
   const ctx = canvas.getContext('2d');
@@ -1554,8 +1792,8 @@
 
   const ASSEMBLY_DURATION = 5200; // 5,2 secondes complètes pour bien voir les pixels former la photo
 
-  // Grille haute densité de petits carreaux violets (matrice pixelisée nette avec espacement blanc)
-  const CELL_STEP = 4; // Cellules de 4x4 px (carreaux carrés de 3x3 et 2x2 px)
+  // Grille ultra-pixelisée haute densité (plus de 22 000 petits carreaux/étoiles)
+  const CELL_STEP = 3; // Cellules de 3x3 px (carreaux nets de 2x2 px avec 1px d'espace blanc franc)
 
   let pCount = 0;
   let p_ox = new Float32Array(0);
@@ -1567,12 +1805,16 @@
   let p_vx = new Float32Array(0);
   let p_vy = new Float32Array(0);
   let p_delay = new Float32Array(0);
+  let p_cos = new Float32Array(0);
+  let p_sin = new Float32Array(0);
+  let p_starDist = new Float32Array(0);
   let p_col = new Uint32Array(0);
   let p_size = new Uint8Array(0);
 
   let frameImgData = null;
   let buf32 = null;
   let bustDims = { w: 0, h: 0, x: 0, y: 0 };
+  let statusHideScheduled = false;
 
   let mouse = { x: -1000, y: -1000, radius: 52, active: false };
   let scrollY = 0;
@@ -1580,22 +1822,22 @@
   let animationRunning = false;
   let assemblyStartTime = 0;
 
-  // Palette Pixel-Art Monochrome / Duotone Violet & Indigo Profond (ABGR 32-bit)
+  // Palette 100% Violet & Blanc (ABGR 32-bit, zéro noir, zéro bleu)
   function packRGB(r, g, b, a = 255) {
     return (a << 24) | (b << 16) | (g << 8) | r;
   }
 
   const VIOLET_PALETTE = [
-    packRGB(18, 9, 52),     // 0: Indigo nuit profond (#120934) - Cheveux, pupilles, sourcils
-    packRGB(32, 16, 86),    // 1: Indigo très sombre (#201056) - Contours yeux, sourire, revers veste
-    packRGB(50, 26, 130),   // 2: Indigo royal (#321A82) - Veste costume, ombres marquées
-    packRGB(72, 38, 178),   // 3: Violet profond (#4826B2) - Ombres douces visage & cou
-    packRGB(96, 56, 224),   // 4: Violet intense (#6038E0) - Tons moyens peau (joues, front)
-    packRGB(118, 78, 248),  // 5: Violet électrique (#764EF8) - Peau éclairée
-    packRGB(145, 112, 255), // 6: Violet doux (#9170FF) - Pommettes, arête du nez
-    packRGB(175, 150, 255), // 7: Lavande clair (#AF96FF) - Reflets clairs & sourire
-    packRGB(205, 188, 255), // 8: Lilas pâle (#CDBEFF) - Chemise blanche & fondu bas
-    packRGB(228, 218, 255)  // 9: Voile lilas (#E4DAFF) - Extrême bord inférieur
+    packRGB(42, 14, 104),   // 0: Violet Nuit Intense (#2A0E68) - Cheveux, pupilles, sourcils
+    packRGB(64, 24, 152),   // 1: Violet Royal Sombre (#401898) - Contours yeux, sourire, revers veste
+    packRGB(86, 36, 198),   // 2: Violet Profond (#5624C6) - Costume & ombres marquées
+    packRGB(104, 52, 238),  // 3: Violet Franc (#6834EE) - Ombres douces visage & cou
+    packRGB(118, 72, 255),  // 4: Violet Électrique (#7648FF) - Tons moyens peau (joues, front)
+    packRGB(142, 102, 255), // 5: Violet Lumineux (#8E66FF) - Peau éclairée
+    packRGB(168, 136, 255), // 6: Lavande Doux (#A888FF) - Pommettes, arête du nez
+    packRGB(196, 172, 255), // 7: Lavande Clair (#C4ACFF) - Reflets clairs & sourire
+    packRGB(222, 208, 255), // 8: Blanc-Lilas (#DED0FF) - Chemise blanche & fondu bas
+    packRGB(242, 236, 255)  // 9: Blanc-Violet Pur (#F2ECFF) - Extrême bord inférieur
   ];
 
   const portraitImg = new Image();
@@ -1630,10 +1872,21 @@
     if (!portraitImg.complete || portraitImg.naturalWidth === 0) return;
 
     const aspect = portraitImg.naturalHeight / portraitImg.naturalWidth;
-    const bustHeight = Math.floor(Math.min(ch * 0.85, 670));
-    const bustWidth = Math.floor(bustHeight / aspect);
-    const startX = Math.floor((cw - bustWidth) / 2);
-    const startY = Math.floor((ch - bustHeight) / 2 - 6);
+    const isMobile = cw < 768;
+
+    // Cadrage sur mesure Mobile vs Desktop pour éviter tout chevauchement
+    let bustHeight, bustWidth, startX, startY;
+    if (isMobile) {
+      bustHeight = Math.floor(Math.min(ch * 0.54, cw * 0.96, 440));
+      bustWidth = Math.floor(bustHeight / aspect);
+      startX = Math.floor((cw - bustWidth) / 2);
+      startY = Math.floor(Math.max(90, (ch - bustHeight) * 0.28));
+    } else {
+      bustHeight = Math.floor(Math.min(ch * 0.85, 670));
+      bustWidth = Math.floor(bustHeight / aspect);
+      startX = Math.floor((cw - bustWidth) / 2);
+      startY = Math.floor((ch - bustHeight) / 2 - 6);
+    }
     bustDims = { w: bustWidth, h: bustHeight, x: startX, y: startY };
 
     const offCanvas = document.createElement('canvas');
@@ -1656,8 +1909,10 @@
     const tempSize = new Uint8Array(maxParticles);
     let count = 0;
 
+    const centerPortraitX = startX + bustWidth * 0.5;
+    const centerPortraitY = startY + bustHeight * 0.42;
+
     for (let y = 0; y < bustHeight - step; y += step) {
-      // Facteur de fondu progressif vers le bas du buste (comme sur le modèle)
       const verticalRatio = y / bustHeight;
       const bottomFade = verticalRatio > 0.70 ? (verticalRatio - 0.70) / 0.30 : 0;
 
@@ -1668,10 +1923,9 @@
         const a = imgData[idx + 3];
 
         if (a > 65) {
-          // Échantillonnage lissé sur la cellule pour un alignement géométrique parfait
-          const x1 = Math.min(bustWidth - 1, x + 1);
+          const x1 = Math.min(bustWidth - 1, x);
           const x2 = Math.min(bustWidth - 1, x + step - 1);
-          const y1 = Math.min(bustHeight - 1, y + 1);
+          const y1 = Math.min(bustHeight - 1, y);
           const y2 = Math.min(bustHeight - 1, y + step - 1);
           const pA = (y1 * bustWidth + x1) * 4;
           const pB = (y1 * bustWidth + x2) * 4;
@@ -1684,8 +1938,7 @@
 
           const rawLuma = 0.299 * r + 0.587 * g + 0.114 * b;
 
-          // Moyenne locale douce à rayon 8px pour souligner les yeux, le sourire et le col
-          const rad = 8;
+          const rad = 7;
           const xL = Math.max(0, sampleX - rad), xR = Math.min(bustWidth - 1, sampleX + rad);
           const yT = Math.max(0, sampleY - rad), yB = Math.min(bustHeight - 1, sampleY + rad);
           const i1 = (sampleY * bustWidth + xL) * 4;
@@ -1699,40 +1952,39 @@
             (0.299 * imgData[i4] + 0.587 * imgData[i4 + 1] + 0.114 * imgData[i4 + 2])
           ) * 0.25;
 
-          let luma = Math.pow(rawLuma / 255, 0.72) * 255 + (rawLuma - localAvg) * 0.75;
+          let luma = Math.pow(rawLuma / 255, 0.72) * 255 + (rawLuma - localAvg) * 0.78;
           luma = Math.max(0, Math.min(255, luma));
           luma = Math.min(255, luma + bottomFade * 115);
 
           let shadeIdx = 0;
-          let pixSize = 3; // Grille 4x4 px : carreaux de 3x3 px avec grille blanche nette de 1px partout
+          let pixSize = 2; // Grille 3x3 px : carreaux nets de 2x2 px avec 1px d'espace blanc franc
 
           if (luma < 42) {
-            shadeIdx = 0; pixSize = 3;
+            shadeIdx = 0; pixSize = 2;
           } else if (luma < 68) {
-            shadeIdx = 1; pixSize = 3;
+            shadeIdx = 1; pixSize = 2;
           } else if (luma < 92) {
-            shadeIdx = 2; pixSize = 3;
+            shadeIdx = 2; pixSize = 2;
           } else if (luma < 116) {
-            shadeIdx = 3; pixSize = 3;
+            shadeIdx = 3; pixSize = 2;
           } else if (luma < 138) {
-            shadeIdx = 4; pixSize = 3;
+            shadeIdx = 4; pixSize = 2;
           } else if (luma < 160) {
-            shadeIdx = 5; pixSize = 3;
+            shadeIdx = 5; pixSize = 2;
           } else if (luma < 182) {
-            shadeIdx = 6; pixSize = 3;
+            shadeIdx = 6; pixSize = 2;
           } else if (luma < 204) {
             shadeIdx = 7; pixSize = 2;
           } else if (luma < 228) {
-            shadeIdx = 8; pixSize = 2;
+            shadeIdx = 8; pixSize = 1;
           } else {
-            shadeIdx = 9; pixSize = 2;
+            shadeIdx = 9; pixSize = 1;
           }
 
           tempCol[count] = VIOLET_PALETTE[shadeIdx];
           tempSize[count] = pixSize;
-          const offset = (step - pixSize) >> 1;
-          tempOx[count] = startX + x + offset;
-          tempOy[count] = startY + y + offset;
+          tempOx[count] = startX + x;
+          tempOy[count] = startY + y;
           count++;
         }
       }
@@ -1750,10 +2002,20 @@
     p_vx = new Float32Array(count);
     p_vy = new Float32Array(count);
     p_delay = new Float32Array(count);
+    p_cos = new Float32Array(count);
+    p_sin = new Float32Array(count);
+    p_starDist = new Float32Array(count);
 
+    // Pré-calcul des vecteurs d'éclatement radial (séparation en étoiles au défilement)
     for (let i = 0; i < count; i++) {
       p_x[i] = p_ox[i];
       p_y[i] = p_oy[i];
+      const dx = p_ox[i] - centerPortraitX;
+      const dy = p_oy[i] - centerPortraitY;
+      const baseAngle = Math.atan2(dy, dx) + (Math.random() - 0.5) * 0.85;
+      p_cos[i] = Math.cos(baseAngle);
+      p_sin[i] = Math.sin(baseAngle);
+      p_starDist[i] = 160 + Math.random() * Math.max(cw, ch) * 0.65;
     }
 
     if (shouldScatter) {
@@ -1770,6 +2032,12 @@
       pwshStatus.textContent = '[' + bar + '] ' + pct + '% · Assemblage des pixels...';
     } else {
       pwshStatus.textContent = '[██████████] 100% READY · Portrait actif';
+      if (!statusHideScheduled) {
+        statusHideScheduled = true;
+        setTimeout(() => {
+          if (pwshStatus) pwshStatus.classList.add('hidden-status');
+        }, 2400);
+      }
     }
   }
 
@@ -1781,8 +2049,9 @@
 
     const cw = canvas.width;
     const ch = canvas.height;
-    const scatterFactor = Math.min(1.8, scrollY / 320);
-    const scrollOffset = scrollY * 0.3;
+    // Facteur de séparation des étoiles lors du défilement
+    const scatterFactor = Math.min(1.6, scrollY / 280);
+    const scrollOffset = scrollY * 0.18;
     const repelRadius = mouse.radius;
     const repelRadiusSq = repelRadius * repelRadius;
     const mActive = mouse.active;
@@ -1796,16 +2065,16 @@
     updatePwshStatus(globalProgress);
 
     buf32.fill(0);
-    const halfCw = cw * 0.5;
 
     for (let i = 0; i < pCount; i++) {
       let tx = p_ox[i];
       let ty = p_oy[i] - scrollOffset;
 
-      if (scatterFactor > 0.04) {
-        const angle = (tx - halfCw) * 0.012;
-        tx += Math.cos(angle) * (scatterFactor * 110);
-        ty += Math.sin(angle) * (scatterFactor * 130);
+      // Quand on défile la page, chaque pixel/étoile se sépare dans sa propre direction radiale
+      if (scatterFactor > 0.01) {
+        const dist = scatterFactor * scatterFactor * p_starDist[i];
+        tx += p_cos[i] * dist;
+        ty += p_sin[i] * dist;
       }
 
       let x, y;
